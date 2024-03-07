@@ -49,18 +49,19 @@ html {
     display: flex;
     justify-content: space-between;
     max-width: 90%;
-    padding: 1em;
+    /* padding: 1em; */
     width: 100%;
     align-items: center;
     
 }
 
-/* .logo {
+.logo {
     display: inline-block;
-} */
+    z-index: 100;
+}
 
 .logo img {
-    width: 6em;
+    width: 5em;
     height: auto;
 
 }
@@ -121,8 +122,18 @@ html {
     font-size: 1.4em;
 }
 
+/* about */
+.about .container {
+    text-align: center;
+}
+
+.about h2{
+    font-size: 2.4em;
+    color: #E14C62;
+}
 
 
+/*footer */
 .footer {
     background-color: #fff;
     padding-bottom: 1em;
@@ -150,6 +161,9 @@ html {
     text-decoration: none;
     color: #4F4C57;
 }
+.footer .container li a:hover{
+    color:#E14C62;
+}
 
 .footer .container .copyright {
     border-top: 1px solid #4F4C57;
@@ -164,7 +178,7 @@ html {
     opacity: 0.5;
 }
 
-.footer .container .copyright span.logo{
+.footer .container .copyright span.logo-span{
     color: #E14C62;
     opacity: 1;
     text-shadow: 1px 1px 1px #4F4C57;
