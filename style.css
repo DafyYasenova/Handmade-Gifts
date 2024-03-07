@@ -21,11 +21,13 @@ html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .banner {
 
-    background-image: url("./banner5.jpg");
+    background-image: url("./banner3.3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -39,6 +41,7 @@ html {
     background-color: #fff;
     top: 0;
     z-index: 9999;
+    box-shadow: 0 0.5em 1em rgba(0,0,0,.1);
 }
 
 .section-site-header .container {
@@ -83,18 +86,20 @@ html {
 }
 
 .main-nav li a:hover {
-    color: #bc21ba;
+    color: #E14C62;
+    text-shadow: 1px 1px 1px #4F4C57;
  
   
 }
 
 
 .section-hero {
-    color: #4F4C57;
+    color: #fff;
     padding: 5em 0 3em 3em;
 }
 
 .section-hero h2 {
+    text-shadow: 1px 1px 2px black;
     padding-top: 1em;
     font-weight: bold;
     padding-bottom: 1.2em;
@@ -102,8 +107,8 @@ html {
 }
 
 .section-hero p {
-
     text-align: center;
+    text-shadow: 1px 1px 2px #4F4C57;
 }
 
 
@@ -120,13 +125,13 @@ html {
 
 .footer {
     background-color: #fff;
-    padding: 3em 0;
+    padding-bottom: 1em;
 }
 
 .footer .container .info {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2em;
+   
 }
 
 .footer .container .info h5 {
@@ -157,4 +162,11 @@ html {
 .footer .container .copyright span {
     color: #4F4C57;
     opacity: 0.5;
+}
+
+.footer .container .copyright span.logo{
+    color: #E14C62;
+    opacity: 1;
+    text-shadow: 1px 1px 1px #4F4C57;
+   
 }
