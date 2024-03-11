@@ -125,13 +125,52 @@ html {
 /* about */
 .about .container {
     text-align: center;
+    margin: 2em auto;
 }
 
+
 .about h2{
-    font-size: 2.4em;
+    font-size: 3em;
     color: #E14C62;
 }
 
+.about p {
+    font-size: 1.4em;
+    margin-bottom: 2em;
+}
+.container-card {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+.card-about{
+    flex: 0 0 100px;
+    width: 100px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.3);
+    border-radius: 0.2em;
+    transition: all 0.3s ease-in;
+}
+
+.card-about:hover {
+    width: 400px;
+    flex: 0 0 400px;
+    border-left: 8px solid #fff;
+    border-right: 8px solid #fff;
+}
+
+.card-about img {
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
 
 /*footer */
 .footer {
@@ -178,9 +217,11 @@ html {
     opacity: 0.5;
 }
 
-.footer .container .copyright span.logo-span{
+.footer .container .copyright span.logo-span,
+.footer .container .info span.logo-span{
     color: #E14C62;
     opacity: 1;
     text-shadow: 1px 1px 1px #4F4C57;
    
 }
+
