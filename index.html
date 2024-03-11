@@ -17,12 +17,12 @@
 
             <div class="logo">
                 <img src="logo3.png" alt="logo">
-               
+
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Search</a></li>
@@ -48,36 +48,71 @@
     </section>
 
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <h2>About us</h2>
-            <p>Delight a loved one with a personalized gift, handmade by us. Here you will find a wide variety for every occasion. You can buy from our ready-made products, as well as we can make according to your wish.</p>
-           <div class="container-card">
-            <div class="card-about"><img src="assets/images/26814543_1214230088708146_20286857911660272_n.jpg" /></div>
-            <div class="card-about"><img src="assets/images/23926508_1183273751803780_6283891559648500740_o.jpg" /></div>
-            <div class="card-about"><img src="assets/images/36673565_1334713076659846_7789184621660340224_n.jpg" /></div>
-            <div class="card-about"><img src="assets/images/43339450_1421317834666036_5129400890955923456_n.jpg" /></div>
-            <div class="card-about"><img src="assets/images/43485805_1421317724666047_8971714393855229952_n.jpg" /></div>
-            <div class="card-about"><img src="assets/images/51086991_1512507135547105_7407713129737486336_n.jpg" /></div>
-            <div class="card-about"><img src="assets/images/51900609_1517321261732359_7386409451999199232_n.jpg" /></div>
-            <div class="card-about"><img src="assets/images/75550379_1739125329551950_6738751967427821568_n.jpg" /></div>
-            <div class="card-about"><img src="assets/images/74624190_1739120162885800_2124925315825270784_n.jpg" /></div>
-           </div>
+            <p>Delight a loved one with a personalized gift, handmade by us. Here you will find a wide variety for every
+                occasion. You can buy from our ready-made products, as well as we can make according to your wish.</p>
+            <div class="container-card">
+                <div class="card-about"><img src="assets/images/26814543_1214230088708146_20286857911660272_n.jpg" />
+                </div>
+                <div class="card-about"><img src="assets/images/23926508_1183273751803780_6283891559648500740_o.jpg" />
+                </div>
+                <div class="card-about"><img src="assets/images/36673565_1334713076659846_7789184621660340224_n.jpg" />
+                </div>
+                <div class="card-about"><img src="assets/images/43339450_1421317834666036_5129400890955923456_n.jpg" />
+                </div>
+                <div class="card-about"><img src="assets/images/43485805_1421317724666047_8971714393855229952_n.jpg" />
+                </div>
+                <div class="card-about"><img src="assets/images/51086991_1512507135547105_7407713129737486336_n.jpg" />
+                </div>
+                <div class="card-about"><img src="assets/images/51900609_1517321261732359_7386409451999199232_n.jpg" />
+                </div>
+                <div class="card-about"><img src="assets/images/75550379_1739125329551950_6738751967427821568_n.jpg" />
+                </div>
+                <div class="card-about"><img src="assets/images/74624190_1739120162885800_2124925315825270784_n.jpg" />
+                </div>
+            </div>
         </div>
     </section>
-    <section class="footer">
+
+    <section class="banner-forms">
+        <section class="section-login">
+            <div class="container">
+                <form action="">
+                    <div class="wrapper">
+                        <h3>Login</h3>
+                        <div class="input-box">
+                            <input type="text" placeholder="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" placeholder="Password">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <div class="register-link">
+                            <p>Don't have an account? <a href="#">Register</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+
+    <footer class="footer">
         <div class="container">
             <div class="info">
                 <div>
-                  <div class="logo">
-                    <img src="./logo3.png" alt="logo" />
-                    <ul>
-                        <li>Bulgaria, 4900</li>
-                        <li>+359-893-***</li>
-                        <li>handmade-gifts@gmail.com</li>
-                        <li><a href="#"><span class="logo-span">Dafy's Art Studio</span></a></li>
-                    </ul>
-                </div>
+                    <div class="logo">
+                        <img src="./logo3.png" alt="logo" />
+                        <ul>
+                            <li>Bulgaria, 4900</li>
+                            <li>+359-893-***-***</li>
+                            <li>handmade-gifts@gmail.com</li>
+                            <li><a href="#"><span class="logo-span">Dafy's Art Studio</span></a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="panel">
                     <h5>Follow us</h5>
@@ -90,7 +125,7 @@
                     </ul>
                 </div>
                 <div class="panel">
-                   
+
                     <h5>Partners</h5>
                     <ul>
                         <li><a href="#"><span>Handmade by SK</span></a></li>
@@ -110,11 +145,12 @@
                 </div>
             </div>
             <div>
-                <p class="copyright">&copy; 2024 | <span> All rights reserved! | </span><span class="logo-span">Handmade Gifts</span><span>  | Dafy Yasenova.</span>
+                <p class="copyright">&copy; 2024 | <span> All rights reserved! | </span><span class="logo-span">Handmade
+                        Gifts</span><span> | Dafy Yasenova.</span>
                 </p>
             </div>
         </div>
-    </section>
+    </footer>
 </body>
 
 </html>
