@@ -21,8 +21,7 @@ html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em;
 }
 
 .banner {
@@ -125,8 +124,9 @@ html {
 
 /* about */
 .about .container {
+    padding-top: 8em;
     text-align: center;
-    margin: 2em auto;
+   margin-bottom: 3em;
 }
 
 
@@ -175,6 +175,72 @@ html {
 
 }
 
+/* gallery */
+
+.gallery .container {
+    padding-top: 8em;
+    text-align: center;
+   margin-bottom: 3em;
+}
+
+
+.gallery .container h2 {
+    font-size: 2.6em;
+    color: #E14C62;
+    padding-bottom: 1em;
+}
+
+.gallery .container p {
+    font-size: 1.4em;
+    /* margin-bottom: 2em; */
+}
+
+.gallery .container .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em 1em;
+}
+
+/* .gallery .container .container-cards::after,
+.gallery .container .container-cards::before {
+    display: block;
+    content: '';
+    flex: 0 0 30%;
+    order: 9999;
+ 
+} */
+
+.gallery .container .container-cards .card {
+   
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+    width: 30%;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .gallery .container .container-cards .card {
+        width: calc(50% - 2em); 
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery .container .container-cards .card {
+        width: calc(100% - 2em); 
+    }
+}
+.gallery .container .container-cards .card img {
+    width: 100%;
+    height: auto;
+}
 
 /* login */
 .banner-forms {
@@ -292,6 +358,7 @@ html {
 
 /*footer */
 .footer {
+    padding-top: 2em;
     background-color: #fff;
     padding-bottom: 1em;
 }
