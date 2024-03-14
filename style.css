@@ -88,8 +88,10 @@ html {
     color: #E14C62;
     text-shadow: 1px 1px 1px #4F4C57;
 
-
 }
+/* .main-nav li a:link {
+    color: #E14C62;
+} */
 
 
 .section-hero {
@@ -180,6 +182,8 @@ html {
     padding-top: 8em;
     text-align: center;
     margin-bottom: 3em;
+    
+
 }
 
 
@@ -301,7 +305,7 @@ html {
 .details .container .details-item .details-content {
 
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 3em;
     justify-items: stretch;
     padding: 2em;
@@ -319,33 +323,50 @@ html {
 .details .container .details-item .details-content p {
     padding-bottom: 0.8em;
 }
-.details .container .details-item .details-content i {
+.details .container .details-item .details-content .content i {
     padding-right: 0.6em;
     color: #E14C62;
 }
+.details .container .details-item .details-content .action {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.details .container .details-item .details-content .action span{
+    display:none; 
+    padding-right: 0;
+}
+
 
 .details .container .details-item .details-content .action .btn {
     margin: 0.2em;
 }
+.details .container .details-item .details-content .action button:hover span {
+    display: inline; 
+}
+
 
 .details .container .details-item .details-content .action button {
-    align-self: flex-end;
+    /* align-self: flex-end; */
     background-color: #fff;
     color: #E14C62;
     padding: 0.3em 0.5em;
     outline: none;
     border: none;
     border-radius: 0.2em;
-    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.5);
+    /* filter: drop-shadow(0 0 0.3em #121212); */
     cursor: pointer;
     font-size: 1.2em;
+    
 }
 
-.details .container .details-item .details-content .action button:hover,
-.details .container .details-item .details-content .action button:hover i {
+.details .container .details-item .details-content .action button:hover{
+/* .details .container .details-item .details-content .action button:hover i { */
     background-color: #E14C62;
     color: #fff;
     transition: all 0.3s ease;
+   
 }
 
 @media (max-width: 992px) {
