@@ -36,6 +36,7 @@ html {
 
 
 .section-site-header {
+    
     color: #4F4C57;
     position: sticky;
     background-color: #fff;
@@ -185,7 +186,8 @@ html {
     padding: 3em 0;
 }
 
-.section-login .container {
+.section-login .container,
+.section-register .container {
 
     display: flex;
     justify-content: center;
@@ -193,8 +195,9 @@ html {
 
 }
 
-.section-login .container .wrapper {
-    width: 20em;
+.section-login .container .wrapper,
+.section-register .container .wrapper {
+    width: 25em;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(2.4em);
@@ -205,21 +208,24 @@ html {
     padding: 2em 1em;
 }
 
-.section-login .container .wrapper h3 {
+.section-login .container .wrapper h3,
+.section-register .container .wrapper h3 {
     font-size: 2em;
     text-align: center;
 
 }
 
-.section-login .container .wrapper .input-box {
+.section-login .container .wrapper .input-box,
+.section-register .container .wrapper .input-box {
     width: 100%;
-    height: 4em;
+    height: 3em;
     margin: 3em 0;
     position: relative;
 
 }
 
-.section-login .container .wrapper .input-box input {
+.section-login .container .wrapper .input-box input,
+.section-register .container .wrapper .input-box input {
     width: 90%;
     height: 100%;
     background: transparent;
@@ -233,12 +239,14 @@ html {
     padding: 1.6em 2.2em 1.6em 1.6em;
 }
 
-.section-login .container .wrapper .input-box input::placeholder {
+.section-login .container .wrapper .input-box input::placeholder,
+ .section-register .container .wrapper .input-box input::placeholder {
     color: #fff;
 
 }
 
-.section-login .container .wrapper .input-box i {
+.section-login .container .wrapper .input-box i,
+.section-register .container .wrapper .input-box i{
     position: absolute;
     right: 2em;
     top: 50%;
@@ -246,7 +254,8 @@ html {
     font-size: 1.2em;
 }
 
-.section-login .container .wrapper .btn {
+.section-login .container .wrapper .btn ,
+.section-register .container .wrapper .btn {
     width: 60%;
     height: 3em;
     background-color: #fff;
@@ -260,19 +269,23 @@ html {
 
 }
 
-.section-login .container .wrapper .register-link {
+.section-login .container .wrapper .register-link,
+.section-register .container .wrapper .login-link  {
     margin-top: 1.2em;
 }
-.section-login .container .wrapper .register-link p {
+.section-login .container .wrapper .register-link p,
+.section-register .container .wrapper .login-link p  {
     color:#fff;
 }
-.section-login .container .wrapper .register-link p a {
+.section-login .container .wrapper .register-link p a, 
+.section-register .container .wrapper .login-link p a {
     color: #E14C62;
     text-decoration: none;
 
 }
 
-.section-login .container .wrapper .register-link p a:hover {
+.section-login .container .wrapper .register-link p a:hover, 
+.section-register .container .wrapper .login-link p a:hover {
     text-decoration: underline;
 }
 
