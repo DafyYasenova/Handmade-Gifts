@@ -35,7 +35,7 @@ html {
 
 
 .section-site-header {
-    
+
     color: #4F4C57;
     position: sticky;
     background-color: #fff;
@@ -45,14 +45,12 @@ html {
 }
 
 .section-site-header .container {
-
     display: flex;
     justify-content: space-between;
     max-width: 90%;
-    /* padding: 1em; */
     width: 100%;
     align-items: center;
-
+    padding: 0.5em 1em;
 }
 
 .logo {
@@ -126,7 +124,7 @@ html {
 .about .container {
     padding-top: 8em;
     text-align: center;
-   margin-bottom: 3em;
+    margin-bottom: 3em;
 }
 
 
@@ -161,8 +159,9 @@ html {
 .about .container .card-about:hover {
     width: 30em;
     flex: 0 0 30em;
-    border-left: 4px solid #fff;
-    border-right: 4px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+
 }
 
 .card-about img {
@@ -180,7 +179,7 @@ html {
 .gallery .container {
     padding-top: 8em;
     text-align: center;
-   margin-bottom: 3em;
+    margin-bottom: 3em;
 }
 
 
@@ -192,7 +191,7 @@ html {
 
 .gallery .container p {
     font-size: 1.4em;
-    /* margin-bottom: 2em; */
+
 }
 
 .gallery .container .container-cards {
@@ -213,34 +212,155 @@ html {
 } */
 
 .gallery .container .container-cards .card {
-   
-    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.3);
     border-radius: 5px;
-
     width: 30%;
-
+    flex-flow: 1;
     overflow: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    
+}
+
+.gallery .container .container-cards .card:hover {
+    width: 31%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.gallery .container .container-cards .card .content-card {
+    display: flex;
+    align-self: flex-end;
+    gap: 1em;
+
+}
+
+.gallery .container .container-cards .card button {
+    background-color: #fff;
+    color: #E14C62;
+    padding: 0.3em 0.5em;
+    outline: none;
+    border: none;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.gallery .container .container-cards .card button:hover {
+
+    background-color: #E14C62;
+    color: #fff;
+    transition: all 0.6s ease;
+
 }
 
 @media (max-width: 992px) {
     .gallery .container .container-cards .card {
-        width: calc(50% - 2em); 
+        width: calc(50% - 2em);
+    }
+    .gallery .container .container-cards .card:hover{
+        width: calc(50% - 1em);
     }
 }
 
 @media (max-width: 576px) {
-    .gallery .container .container-cards .card {
-        width: calc(100% - 2em); 
+    .gallery .container .container-cards .card{
+        width: calc(100% - 2em);
+    }
+    .gallery .container .container-cards .card:hover {
+        width: calc(100% - 1em);
     }
 }
+
 .gallery .container .container-cards .card img {
     width: 100%;
     height: auto;
 }
+
+
+
+/* details */
+.details .container .details-item {
+    display: flex;
+    gap: 2em;
+    align-items: stretch;
+}
+
+
+.details .container .details-item .details-img{
+   flex: 1 0 40%;
+   border: 2px solid #fff;
+   border-radius: 0.2em;
+   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+  
+}
+
+.details .container .details-item .details-content {
+
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    justify-items: stretch;
+    padding: 2em;
+}
+.details .container .details-item .details-content h3 {
+
+    text-align: center;
+    font-weight: 800;
+    font-size: 2em;
+}
+.details .container .details-item .details-content h3, h4{
+    color: #E14C62;
+    padding-bottom: 1em;
+}
+.details .container .details-item .details-content p {
+    padding-bottom: 0.8em;
+}
+.details .container .details-item .details-content i {
+    padding-right: 0.6em;
+    color: #E14C62;
+}
+
+.details .container .details-item .details-content .action .btn {
+    margin: 0.2em;
+}
+
+.details .container .details-item .details-content .action button {
+    align-self: flex-end;
+    background-color: #fff;
+    color: #E14C62;
+    padding: 0.3em 0.5em;
+    outline: none;
+    border: none;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.details .container .details-item .details-content .action button:hover,
+.details .container .details-item .details-content .action button:hover i {
+    background-color: #E14C62;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 992px) {
+
+    .details .container .details-item{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .details .container .details-item .details-img{
+        flex: 0 1 40%;
+    padding: 0 3em;
+   text-align: center;
+    }
+}
+
 
 /* login */
 .banner-forms {
@@ -306,13 +426,13 @@ html {
 }
 
 .section-login .container .wrapper .input-box input::placeholder,
- .section-register .container .wrapper .input-box input::placeholder {
+.section-register .container .wrapper .input-box input::placeholder {
     color: #fff;
 
 }
 
 .section-login .container .wrapper .input-box i,
-.section-register .container .wrapper .input-box i{
+.section-register .container .wrapper .input-box i {
     position: absolute;
     right: 2em;
     top: 50%;
@@ -320,7 +440,7 @@ html {
     font-size: 1.2em;
 }
 
-.section-login .container .wrapper .btn ,
+.section-login .container .wrapper .btn,
 .section-register .container .wrapper .btn {
     width: 60%;
     height: 3em;
@@ -336,21 +456,23 @@ html {
 }
 
 .section-login .container .wrapper .register-link,
-.section-register .container .wrapper .login-link  {
+.section-register .container .wrapper .login-link {
     margin-top: 1.2em;
 }
+
 .section-login .container .wrapper .register-link p,
-.section-register .container .wrapper .login-link p  {
-    color:#fff;
+.section-register .container .wrapper .login-link p {
+    color: #fff;
 }
-.section-login .container .wrapper .register-link p a, 
+
+.section-login .container .wrapper .register-link p a,
 .section-register .container .wrapper .login-link p a {
     color: #E14C62;
     text-decoration: none;
 
 }
 
-.section-login .container .wrapper .register-link p a:hover, 
+.section-login .container .wrapper .register-link p a:hover,
 .section-register .container .wrapper .login-link p a:hover {
     text-decoration: underline;
 }
