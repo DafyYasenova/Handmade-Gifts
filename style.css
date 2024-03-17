@@ -164,6 +164,7 @@ html {
     flex: 0 0 30em;
     border-left: 2px solid #fff;
     border-right: 2px solid #fff;
+    transition: all 0.3s ease-in;
 
 }
 
@@ -176,18 +177,20 @@ html {
     transform: translate(-50%, -50%);
 
 }
-@media(max-width: 1080px){
+
+@media(max-width: 1080px) {
     .about .container .container-card {
         flex-direction: row;
         flex-wrap: wrap;
     }
-    .about .container .card-about{
+
+    .about .container .card-about {
         width: 25%;
         flex: 0 1 25%;
-       border-left: 0;
-       border-right: 0;
-    
+        border-left: 0;
+        border-right: 0;
     }
+
     .card-about img {
         width: 100%;
         height: auto;
@@ -325,10 +328,10 @@ html {
 .details .container .details-item .details-content {
 
     display: flex;
-    /* flex-direction: column; */
+  
     gap: 3em;
-    justify-items: stretch;
     padding: 2em 0;
+  
 }
 
 .details .container .details-item .details-content h3 {
@@ -349,14 +352,7 @@ h4 {
 }
 
 .details .container .details-item .details-content .content i {
-    padding-right: 0.6em;
     color: #E14C62;
-}
-
-.details .container .details-item .details-content .action {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 .details .container .details-item .details-content .action span {
@@ -367,16 +363,6 @@ h4 {
 
 .details .container .details-item .details-content .action .btn {
     margin: 0.2em;
-
-}
-
-
-.details .container .details-item .details-content .action button.btn:hover {
-    background-color: #E14C62;
-    color: #fff;
-    width: 7em;
-    transition: all 0.3s ease-in;
-
 }
 
 .details .container .details-item .details-content .action button.btn:hover span {
@@ -384,7 +370,7 @@ h4 {
 }
 
 .details .container .details-item .details-content .action button {
-
+    
     background-color: #fff;
     color: #E14C62;
     padding: 0.3em 0.5em;
@@ -394,6 +380,13 @@ h4 {
     box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.5);
     cursor: pointer;
     font-size: 1.2em;
+}
+.details .container .details-item .details-content .action button.btn:hover {
+    background-color: #E14C62;
+    color: #fff;
+    width: 7em;
+    transition: all 0.5s ease;
+
 }
 
 
@@ -417,6 +410,7 @@ h4 {
     }
 
     .details .container .details-item .details-content .action {
+        display: flex;
         flex-direction: row;
         text-align: center;
         justify-content: center;
@@ -469,7 +463,7 @@ h4 {
 .section-register .container .wrapper .input-box {
     width: 100%;
     height: 3em;
-    margin: 3em 0;
+    margin: 2em 0;
     position: relative;
 
 }
