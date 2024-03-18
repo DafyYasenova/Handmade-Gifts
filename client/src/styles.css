@@ -15,7 +15,7 @@ img {
 }
 
 html {
-    font: 16px/1.5 'Roboto', sans-serif;
+    font: 20px/1.5 'Roboto', sans-serif;
 }
 
 
@@ -25,10 +25,4 @@ html {
     padding: 1em;
 }
 
-.banner {
 
-    background-image: url("/assets/images/banner3.3.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
