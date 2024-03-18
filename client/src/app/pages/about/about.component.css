@@ -1,0 +1,73 @@
+/* about */
+.about .container {
+    padding-top: 4em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+
+.about .container h2 {
+    font-size: 2.6em;
+    color: #F05F8C;
+}
+
+.about .container p {
+    font-size: 1.4em;
+    margin-bottom: 2em;
+}
+
+.about .container .container-card {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.about .container .card-about {
+    flex: 0 0 6em;
+    width: 5em;
+    height: 20em;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.3);
+    border-radius: 0.2em;
+    transition: all 0.3s ease-in;
+}
+
+.about .container .card-about:hover {
+    width: 30em;
+    flex: 0 0 30em;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transition: all 0.3s ease-in;
+
+}
+
+.card-about img {
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+@media(max-width: 1080px) {
+    .about .container .container-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .about .container .card-about {
+        width: 25%;
+        flex: 0 1 25%;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .card-about img {
+        width: 100%;
+        height: auto;
+    }
+}
