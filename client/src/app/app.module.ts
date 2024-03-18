@@ -8,11 +8,14 @@ import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { UserModule } from './user/user.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+   
 
   ],
   imports: [
@@ -22,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     PagesModule,
     HttpClientModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
