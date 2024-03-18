@@ -1,0 +1,55 @@
+.section-site-header {
+
+    color: #4F4C57;
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, .1);
+}
+
+.section-site-header .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    width: 100%;
+    align-items: center;
+    padding: 0.5em 1em;
+}
+
+.logo {
+    display: inline-block;
+    z-index: 100;
+}
+
+.logo img {
+    width: 6em;
+    height: auto;
+
+}
+
+.section-site-header a {
+    color: #4F4C57;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li,
+.main-nav a {
+    display: block;
+}
+
+.main-nav a {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.main-nav li a:hover {
+    color: #F05F8C;
+    text-shadow: 1px 1px 1px #4F4C57;
+
+}
