@@ -1,0 +1,99 @@
+/* login */
+.banner-forms {
+
+    background-image: url("/assets/images/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2em 0;
+}
+
+.section-register .container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.section-register .container .wrapper {
+    width: 25em;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2.4em);
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
+    color: #F05F8C;
+    text-align: center;
+    border-radius: 0.4em;
+    padding: 2em 1em;
+}
+
+.section-register .container .wrapper h3 {
+    font-size: 2em;
+    text-align: center;
+
+}
+
+.section-register .container .wrapper .input-box {
+    width: 100%;
+    height: 3em;
+    margin: 2em 0;
+    position: relative;
+
+}
+
+.section-register .container .wrapper .input-box input {
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 7px rgb(0, 0, 0, 0.2);
+    border-radius: 0.4em;
+    color: #fff;
+    font-size: 1em;
+    padding: 1.6em 2.2em 1.6em 1.6em;
+}
+
+.section-register .container .wrapper .input-box input::placeholder {
+    color: #fff;
+}
+
+.section-register .container .wrapper .input-box i {
+    position: absolute;
+    right: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+
+.section-register .container .wrapper .btn {
+    width: 60%;
+    height: 3em;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 0.4em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #F05F8C;
+}
+
+.section-register .container .wrapper .login-link {
+    margin-top: 1.2em;
+}
+
+.section-register .container .wrapper .login-link p {
+    color: #fff;
+}
+
+.section-register .container .wrapper .login-link p a {
+    color: #F05F8C;
+    text-decoration: none;
+}
+
+.section-register .container .wrapper .login-link p a:hover {
+    text-decoration: underline;
+}
