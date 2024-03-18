@@ -51,7 +51,9 @@
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 7px rgb(0, 0, 0, 0.2);
     border-radius: 0.4em;
-    color: #fff;
+    
+    /* color: #fff; */
+    color: #4F4C57;
     font-size: 1em;
     padding: 1.6em 2.2em 1.6em 1.6em;
 }

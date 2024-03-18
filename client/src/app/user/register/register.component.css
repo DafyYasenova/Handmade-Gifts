@@ -1,6 +1,4 @@
-/* login */
 .banner-forms {
-
     background-image: url("/assets/images/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,11 +7,9 @@
 }
 
 .section-register .container {
-
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .section-register .container .wrapper {
@@ -31,7 +27,6 @@
 .section-register .container .wrapper h3 {
     font-size: 2em;
     text-align: center;
-
 }
 
 .section-register .container .wrapper .input-box {
@@ -51,7 +46,9 @@
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 7px rgb(0, 0, 0, 0.2);
     border-radius: 0.4em;
-    color: #fff;
+    /* color: #fff; */
+    color: #4F4C57;
+    
     font-size: 1em;
     padding: 1.6em 2.2em 1.6em 1.6em;
 }
