@@ -7,7 +7,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { PagesModule } from './pages/pages.module';
     CoreModule,
     SharedModule,
     PagesModule,
-
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
