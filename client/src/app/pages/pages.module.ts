@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule
@@ -16,6 +18,7 @@ import { AboutComponent } from './about/about.component';
   exports: [
     HomeComponent,
     AboutComponent,
+    ErrorComponent,
   ]
 })
 export class PagesModule { }

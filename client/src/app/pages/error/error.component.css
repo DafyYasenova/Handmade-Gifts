@@ -1,0 +1,10 @@
+.section-error {
+
+    background-image: url("/assets/images/404.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.section-error .container{
+    min-height: 89vh;
+}
