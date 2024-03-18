@@ -71,3 +71,35 @@
         height: auto;
     }
 }
+
+.about .container .partners {
+    margin: 3em 0;
+
+}
+.about .container .partners h4 {
+
+    font-size: 2em;
+    color: #F05F8C;
+    padding-bottom: 1em;
+}
+.about .container .partners .media-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 2em;
+}
+.about .container .partners .media {
+    overflow: hidden;
+    flex: 0 0 18%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-radius: 50%;
+    
+    border: 5px solid #fff;
+    box-shadow: 0 0 1em 0 rgb(0,0,0,0.2);
+}
+
+.about .container .partners .media:not(:last-child){
+    padding: 0.5em;
+
+}
