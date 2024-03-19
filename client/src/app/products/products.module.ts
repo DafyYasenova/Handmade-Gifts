@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GalleryComponent } from './gallery/gallery.component';
 import { DetailsComponent } from './details/details.component';
+import { CreateComponent } from './create/create.component';
 
 
 
 @NgModule({
   declarations: [
     GalleryComponent,
-    DetailsComponent
+    DetailsComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule
@@ -16,6 +18,7 @@ import { DetailsComponent } from './details/details.component';
   exports: [
     GalleryComponent,
     DetailsComponent,
+    CreateComponent,
   ]
 })
 export class ProductsModule { }
