@@ -19,7 +19,7 @@
     width: 30em;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(0.6em);
+    backdrop-filter: blur(1.6em);
     box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
     color: #F05F8C;
     text-align: center;

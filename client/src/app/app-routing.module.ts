@@ -11,20 +11,21 @@ import { DetailsComponent } from './products/details/details.component';
 import { CreateComponent } from './products/create/create.component';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
+  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
 
 
-  {path: 'products', component: GalleryComponent},  
-  {path: 'products/:id', component: DetailsComponent},  
-  {path: 'create', component: CreateComponent},  
+  { path: 'products', component: GalleryComponent },
+  { path: 'products/:id', component: DetailsComponent },
+  // { path: 'products/:id/edit', component: EditComponent },
+  { path: 'create', component: CreateComponent },
 
-  {path:'login', component: LoginComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'profile', component: ProfileComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', component: ProfileComponent },
 
   { path: '**', redirectTo: '/404' },
-  { path: '404', component: ErrorComponent},
+  { path: '404', component: ErrorComponent },
 ];
 
 @NgModule({

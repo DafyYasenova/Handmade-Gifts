@@ -15,12 +15,12 @@ img {
 }
 
 html {
-    font: 20px/1.5 'Roboto', sans-serif;
+    font: 14px/1.5 'Roboto', sans-serif;
 }
 
 
 .container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1em;
 }
