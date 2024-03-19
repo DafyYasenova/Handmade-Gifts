@@ -9,6 +9,7 @@ import { PagesModule } from './pages/pages.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { UserModule } from './user/user.module';
+import { ProductsModule } from './products/products.module';
 
 
 
@@ -26,6 +27,8 @@ import { UserModule } from './user/user.module';
     PagesModule,
     HttpClientModule,
     UserModule,
+    ProductsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
