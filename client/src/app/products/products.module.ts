@@ -15,6 +15,7 @@ import { DetailsComponent } from './details/details.component';
   ],
   exports: [
     GalleryComponent,
+    DetailsComponent,
   ]
 })
 export class ProductsModule { }
