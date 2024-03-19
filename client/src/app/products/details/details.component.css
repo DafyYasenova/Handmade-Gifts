@@ -1,0 +1,116 @@
+/* details */
+.details .container{
+ padding: 3em 0;
+}
+.details .container .details-item {
+    display: flex;
+    gap: 2em;
+    align-items: stretch;
+}
+
+
+.details .container .details-item .details-img {
+    flex: 1 0 40%;
+    border: 2px solid #fff;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+
+}
+
+.details .container .details-item .details-content {
+
+    display: flex;
+  
+    gap: 3em;
+    padding: 2em 0;
+  
+}
+
+.details .container .details-item .details-content h3 {
+
+    text-align: center;
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.details .container .details-item .details-content h3,
+h4 {
+    color: #F05F8C;
+    padding-bottom: 1em;
+}
+
+.details .container .details-item .details-content p {
+    padding-bottom: 0.8em;
+}
+
+.details .container .details-item .details-content .content i {
+    color: #F05F8C;
+    padding-right: 1em;
+}
+.details .container .details-item .details-content .action{
+    width: 22em;
+   
+    align-self: center;
+}
+
+.details .container .details-item .details-content .action span {
+    display: none;
+    padding-left: 0.3em;
+}
+
+
+.details .container .details-item .details-content .action .btn {
+    margin: 0.2em;
+}
+
+.details .container .details-item .details-content .action button.btn:hover span {
+    display: inline;
+}
+
+.details .container .details-item .details-content .action button {
+    
+    background-color: #fff;
+    color: #F05F8C;
+    padding: 0.3em 0.5em;
+    outline: none;
+    border: none;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 1.2em;
+}
+.details .container .details-item .details-content .action button.btn:hover {
+    background-color: #F05F8C;
+    color: #fff;
+    width: 7em;
+    transition: all 0.5s ease;
+
+}
+
+
+
+@media (max-width: 992px) {
+
+    .details .container .details-item {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .details .container .details-item .details-img {
+        flex: 0 1 40%;
+        padding: 0 3em;
+        text-align: center;
+    }
+
+    .details .container .details-item .details-content {
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+
+    .details .container .details-item .details-content .action {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+    }
+}
