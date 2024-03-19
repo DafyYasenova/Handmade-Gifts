@@ -43,9 +43,15 @@
     color: #F05F8C;
 }
 
-.footer .container .copyright {
+.footer .container .copyright-footer {
+    display: flex;
+    justify-content: space-between;
     border-top: 1px solid #4F4C57;
-    text-align: left;
+    align-items: center;
+}
+.footer .container .copyright-footer .copyright,
+.fa-regular.fa-circle-up {
+
     padding-top: 2em;
     color: #4F4C57;
     letter-spacing: 1.1px;
@@ -62,4 +68,8 @@
     opacity: 1;
     text-shadow: 1px 1px 1px #4F4C57;
 
+}
+
+.fa-regular.fa-circle-up {
+    opacity: 0.5;
 }
