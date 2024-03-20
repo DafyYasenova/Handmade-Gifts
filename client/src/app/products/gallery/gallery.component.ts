@@ -12,7 +12,7 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
     this.api.getProducts().subscribe(products =>{
-      console.log(products)
+      console.log('products:', products)
     } )
   }
 }
