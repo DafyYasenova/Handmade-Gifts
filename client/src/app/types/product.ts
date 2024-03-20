@@ -8,6 +8,7 @@ export interface Product {
     price: number,
     category: String,
     status: string,
+    time: string,
     _id: string,
     userId: User,
 }

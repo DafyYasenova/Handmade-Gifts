@@ -3,51 +3,17 @@
         <h2>Gallery</h2>
 
         <div class="container-cards">
-            <div class="card">
+            <div *ngFor="let product of products" class="card">
                 <div class="image-card">
-                    <img src="assets/images/26814543_1214230088708146_20286857911660272_n.jpg" />
+                    <img src={{product.imageUrl}}/>
                 </div>
                 <div class="content-card">
-                    <p>Product name nam</p>
+                    <p>{{product.name}}</p>
                     <button>View</button>
+            
                 </div>
             </div>
-            <div class="card">
-                <div class="image-card">
-                    <img src="assets/images/26814543_1214230088708146_20286857911660272_n.jpg" />
-                </div>
-                <div class="content-card">
-                    <p>Product name</p>
-                    <button>View</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-card">
-                    <img src="assets/images/26814543_1214230088708146_20286857911660272_n.jpg" />
-                </div>
-                <div class="content-card">
-                    <p>Product name</p>
-                    <button>View</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-card">
-                    <img src="assets/images/26814543_1214230088708146_20286857911660272_n.jpg" />
-                </div>
-                <div class="content-card">
-                    <p>Product name</p>
-                    <button>View</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-card">
-                    <img src="assets/images/26814543_1214230088708146_20286857911660272_n.jpg" />
-                </div>
-                <div class="content-card">
-                    <p>Product name</p>
-                    <button>View</button>
-                </div>
-            </div>
+        
         </div>
     </div>
 </section>
