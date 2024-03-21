@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { GalleryComponent } from './gallery/gallery.component';
 import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +15,7 @@ import { CreateComponent } from './create/create.component';
     CreateComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, RouterModule, SharedModule,
   ],
   exports: [
     GalleryComponent,

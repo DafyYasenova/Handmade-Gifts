@@ -1,8 +1,8 @@
 .lds-roller {
-    margin-left: 47%;
+    /* margin-left: 47%; */
     display: inline-block;
     position:relative;
-    width: 150px;
+    width: 100px;
    
   }
   .lds-roller div { 
