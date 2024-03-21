@@ -9,7 +9,8 @@ import { Product } from 'src/app/types/product';
 })
 export class GalleryComponent implements OnInit {
 
-  products: Product[] =[];
+  products: Product[] | null= null;
+  isLoading: boolean = true;
   constructor(private api: ApiService){};
 
   ngOnInit(): void {
@@ -17,6 +18,7 @@ export class GalleryComponent implements OnInit {
       console.log('products:', products);
 
       this.products = products;
+      this.isLoading = false;
     } )
   }
 }
