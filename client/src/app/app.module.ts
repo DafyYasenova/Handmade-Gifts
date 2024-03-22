@@ -21,13 +21,13 @@ import { ProductsModule } from './products/products.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     SharedModule,
     PagesModule,
     HttpClientModule,
     UserModule,
     ProductsModule,
+    AppRoutingModule,
     
   ],
   providers: [],

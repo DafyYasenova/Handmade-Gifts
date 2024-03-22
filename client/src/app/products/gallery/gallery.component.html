@@ -1,15 +1,18 @@
 <section class="gallery" id="gallery">
     <div class="container">
         <h2>Gallery</h2>
+        <div *ngIf="isLoading">
+        <app-loader />
+        </div>
 
-        <div class="container-cards">
+        <div *ngIf="!isLoading" class="container-cards">
             <div *ngFor="let product of products" class="card">
                 <div class="image-card">
                     <img src={{product.imageUrl}}/>
                 </div>
                 <div class="content-card">
                     <p>{{product.name}}</p>
-                    <button>View</button>
+                   <a [routerLink]="['/products', product._id]" ><button>View</button></a>
             
                 </div>
             </div>
