@@ -6,11 +6,11 @@ import { UserForAuth } from '../types/user';
 })
 export class UserService {
   user: UserForAuth | undefined;
-
-  isLogged = false;
   USER_KEY = '[user]';
 
-  
+  get isLogged(): boolean {
+    return !!this.user;
+  }
   constructor() {
 
     try {
@@ -22,11 +22,18 @@ export class UserService {
   }
 
   login() {
+    this.user = {
+      username: 'Usename',
+      email: 'example@abv.bg',
+      password: '123123',
+    }
 
+    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
   }
 
   logout() {
-
+    this.user = undefined;
+    localStorage.removeItem(this.USER_KEY)
   }
 }
 
