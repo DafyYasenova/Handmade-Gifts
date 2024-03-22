@@ -6,17 +6,29 @@
 
         </div>
         <nav class="main-nav">
-            <ul>
-                <li><a routerLink="/">Home</a></li>
-                <li><a routerLink="/about">About</a></li>
-                <li><a routerLink="/products">Gallery</a></li>
-                <li><a routerLink="/create">Create</a></li>
-                <li><a routerLink="/search">Search</a></li>
-                <li><a routerLink="/login">Login</a></li>
-                <li><a routerLink="/register">Register</a></li>
-                <li><a routerLink="/profile">Profile</a></li>
-                <li><a routerLink="/logout">Logout</a></li>
-            </ul>
+            <div>
+                <ul>
+                    <li><a routerLink="/">Home</a></li>
+                    <li><a routerLink="/about">About</a></li>
+                    <li><a routerLink="/products">Gallery</a></li>
+                    <li><a routerLink="/search">Search</a></li>
+                </ul>
+            </div>
+            <div>
+                <div *ngIf="!isLoggedIn">
+                    <ul>
+                        <li><a routerLink="/login">Login</a></li>
+                        <li><a routerLink="/register">Register</a></li>
+                    </ul>
+                </div>
+                <div *ngIf="isLoggedIn">
+                <ul >
+                    <li><a routerLink="/create">Create</a></li>
+                    <li><a routerLink="/profile">{{ username }}'s Profile</a></li>
+                    <li><a routerLink="/logout">Logout</a></li>
+                </ul>
+            </div>
+            </div>
         </nav>
     </div>
 </section>

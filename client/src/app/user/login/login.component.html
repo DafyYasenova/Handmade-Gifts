@@ -5,14 +5,14 @@
                 <div class="wrapper">
                     <h3>Login</h3>
                     <div class="input-box">
-                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Email" name="email" id="email" #inputEmail>
                         <i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" name="password" id="password" #inputPassword>
                         <i class="fa-solid fa-lock"></i>
                     </div>
-                    <button type="submit" class="btn">Login</button>
+                    <button type="submit" class="btn" (click)="login($event,inputEmail.value, inputPassword.value)">Login</button>
                     <div class="register-link">
                         <p>Don't have an account? <a routerLink="/register">Register</a></p>
                         

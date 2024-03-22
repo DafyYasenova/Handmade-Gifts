@@ -32,6 +32,9 @@
     color: #4F4C57;
 }
 
+.main-nav div {
+    display: inline-block;
+}
 .main-nav ul {
     display: flex;
 }
