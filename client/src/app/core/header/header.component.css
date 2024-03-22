@@ -30,6 +30,7 @@
 
 .section-site-header a {
     color: #4F4C57;
+    cursor: pointer;
 }
 
 .main-nav div {
