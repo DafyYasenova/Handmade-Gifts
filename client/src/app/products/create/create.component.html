@@ -1,60 +1,64 @@
 <section class="banner-forms">
     <section class="section-create">
         <div class="container">
-            <form action="">
+            <form action="" method="post">
                 <div class="wrapper">
                     <h3>Create product</h3>
 
                     <div class="input-box">
-                        <label >Product name</label>
-                        <input type="text" >
+                        <label for="product">Product name</label>
+                        <input type="text" name="product" id="product" #inputProduct>
                     </div>
                     <div class="input-box">
-                        <label >Brand</label>
-                        <input type="text" >
+                        <label for="brand">Brand</label>
+                        <input type="text" name="brand" id="brand" #inputBrand>
                     </div>
                     <div class="input-box">
-                        <label>Image</label>
-                        <input type="text" >
+                        <label for="imageUrl">Image</label>
+                        <input type="text" name="imageUrl" id="imageUrl" #inputImageUrl>
                     </div>
-                
-                    <div class="input-box">
-                        <label>Description</label>
-                        <input type="text" >
-                    </div>
-                    <div class="input-box">
-                        <label>Price</label>
-                        <input type="text" >
-                    </div>
-                    
 
-                    <div  class="category">
-                        <label>Category</label>
+                    <div class="input-box">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" #inputDescription>
+                    </div>
+                    <div class="input-box">
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" #inputPrice>
+                    </div>
+
+
+                    <div class="category">
+                        <label for="category">Category</label>
                         <div>
-                        <select value=''  placeholder="Category" name="category" >
+                            <!-- input? -->
+                            <select value='' placeholder="Category" name="category" id="category" #inputCategory>
 
-                            <option value="Photo frame">Photo frame</option>
-                            <option value="Decoupage set">Decoupage set</option>
-                            <option value="Moss">Moss</option>
-                            <option value="Birthday frame">Birthday frame</option>
-                            <option value="Flowers">Flowers</option>
-                            <option value="Other">Other</option>
-                        </select>
+                                <option value="Photo frame">Photo frame</option>
+                                <option value="Decoupage set">Decoupage set</option>
+                                <option value="Moss">Moss</option>
+                                <option value="Birthday frame">Birthday frame</option>
+                                <option value="Flowers">Flowers</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
                     </div>
 
-                    </div>
+                    <!-- input? -->
+                    <label for="status">Status</label>
+                    <div class="status">
+                        <input type="radio" id="available" name="status" value="" #inputStatus />
+                        <label for="available">Available</label>
+                                                                            <!-- stasus>? -->
+                        <input type="radio" id="to-order" name="status" value="" #inputStatus />
 
-                    
-                        <label>Status</label>
-                        <div class="status">
-                            <input type="radio" id="contactChoice1" name="contact" value="email" />
-                            <label for="contactChoice1">Available</label>
+                        <label for="to-order">To order</label>
 
-                            <input type="radio" id="contactChoice2" name="contact" value="email" />
-                            <label for="contactChoice2">To order</label>
-                      
                     </div>
-                    <button type="submit" class="btn">Create</button>
+                    <button
+                        (click)="addProduct($event,inputProduct.value, inputBrand.value, inputImageUrl.value, inputDescription.value,inputPrice.valueAsNumber, inputCategory.value, inputStatus.value)"
+                        class="btn">Create</button>
 
                 </div>
             </form>
