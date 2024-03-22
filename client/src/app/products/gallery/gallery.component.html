@@ -12,7 +12,7 @@
                 </div>
                 <div class="content-card">
                     <p>{{product.name}}</p>
-                   <a [routerLink]="['/products', product._id]" ><button>View</button></a>
+                   <a *ngIf="isLoggedIn" [routerLink]="['/products', product._id]" ><button>View</button></a>
             
                 </div>
             </div>
