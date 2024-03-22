@@ -10,21 +10,21 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class GalleryComponent implements OnInit {
 
-  products: Product[] | null= null;
+  products: Product[] | null = null;
   isLoading: boolean = true;
 
-  constructor(private api: ApiService, private userService: UserService){};
+  constructor(private api: ApiService, private userService: UserService) { };
 
-get isLoggedIn(): boolean {
-  return this.userService.isLogged;
-}
+  get isLoggedIn(): boolean {
+    return this.userService.isLogged;
+  }
 
   ngOnInit(): void {
-    this.api.getProducts().subscribe((products) =>{
+    this.api.getProducts().subscribe((products) => {
       console.log('products:', products);
 
       this.products = products;
       this.isLoading = false;
-    } )
+    })
   }
 }

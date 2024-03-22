@@ -9,6 +9,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { GalleryComponent } from './products/gallery/gallery.component';
 import { DetailsComponent } from './products/details/details.component';
 import { CreateComponent } from './products/create/create.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -16,9 +17,9 @@ const routes: Routes = [
 
 
   { path: 'products', component: GalleryComponent },
-  { path: 'products/:id', component: DetailsComponent },
+  { path: 'products/:id', component: DetailsComponent ,canActivate: [AuthGuard]},
   // { path: 'products/:id/edit', component: EditComponent },
-  { path: 'create', component: CreateComponent },
+  { path: 'create', component: CreateComponent , canActivate: [AuthGuard]},
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
