@@ -23,13 +23,17 @@ export class ApiService {
       })
     )
   }
-getOneProduct(id:string){
 
-  const { apiUrl} = environment;
 
-  return this.http.get<Product>(`${apiUrl}/products/${id}`)
-}
-  createProduct(product: string, brand: string, imageUrl: string, description: string, price: number, category: string, status: string, time:string) {
+  getOneProduct(id: string) {
+
+    const { apiUrl } = environment;
+
+    return this.http.get<Product>(`${apiUrl}/products/${id}`)
+  }
+
+
+  createProduct(product: string, brand: string, imageUrl: string, description: string, price: number, category: string, status: string, time: string) {
     const { apiUrl } = environment;
     const payload = {
       product,

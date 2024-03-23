@@ -6,7 +6,7 @@ export interface Product {
     imageUrl: string,
     description: string,
     price: number,
-    category: String,
+    category: string,
     status: string,
     time: string,
     _id: string,

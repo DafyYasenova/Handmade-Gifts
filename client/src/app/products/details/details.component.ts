@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Product } from 'src/app/types/product';
 
@@ -7,17 +8,23 @@ import { Product } from 'src/app/types/product';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit{
+export class DetailsComponent implements OnInit {
 
   product = {} as Product;
 
-constructor(private apiService: ApiService){}
+  productId: string = '';
+  constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute) { }
 
-ngOnInit(): void {
-  this.apiService.getOneProduct('123').subscribe((product)=> {
-   this.product= product;
-    console.log("product details:", product)
-    console.log("id",this.product.name)
-  })
-}
+  ngOnInit(): void {
+
+
+    const productId = this.activatedRoute.snapshot.params['id'];
+
+    this.apiService.getOneProduct(productId).subscribe((product) => {
+      this.product = product;
+      this.productId = product._id
+      console.log('product', productId)
+    })
+
+  }
 }
