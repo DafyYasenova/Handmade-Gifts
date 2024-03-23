@@ -15,6 +15,7 @@ import { EmailDirective } from './validators/email.directive';
   ],
   exports: [
     LoaderComponent,
+    EmailDirective,
   ]
 })
 export class SharedModule { }
