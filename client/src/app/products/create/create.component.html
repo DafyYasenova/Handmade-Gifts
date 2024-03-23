@@ -6,8 +6,8 @@
                     <h3>Create product</h3>
 
                     <div class="input-box">
-                        <label for="product">Product name</label>
-                        <input type="text" name="product" id="product" #inputProduct>
+                        <label for="name">Product name</label>
+                        <input type="text" name="name" id="name" #inputName>
                     </div>
                     <div class="input-box">
                         <label for="brand">Brand</label>
@@ -21,6 +21,10 @@
                     <div class="input-box">
                         <label for="description">Description</label>
                         <input type="text" name="description" id="description" #inputDescription>
+                    </div>
+                    <div class="input-box">
+                        <label for="time">Time for production</label>
+                        <input type="text" name="time" id="time" #inputTime>
                     </div>
                     <div class="input-box">
                         <label for="price">Price</label>
@@ -57,7 +61,7 @@
 
                     </div>
                     <button
-                        (click)="addProduct($event,inputProduct.value, inputBrand.value, inputImageUrl.value, inputDescription.value,inputPrice.valueAsNumber, inputCategory.value, inputStatus.value)"
+                        (click)="addProduct($event,inputName.value, inputBrand.value, inputImageUrl.value, inputDescription.value,inputPrice.valueAsNumber, inputCategory.value, inputStatus.value, inputTime.value)"
                         class="btn">Create</button>
 
                 </div>

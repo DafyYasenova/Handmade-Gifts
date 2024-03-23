@@ -113,4 +113,7 @@ h4 {
         text-align: center;
         justify-content: center;
     }
+    /* .details .container .details-item .details-content .action button:hover {
+        pointer-events: none;
+    } */
 }

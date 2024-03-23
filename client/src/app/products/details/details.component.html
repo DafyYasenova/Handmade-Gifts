@@ -4,7 +4,7 @@
 
             
             <div class="details-img">
-                <img src="assets/images/27336781_1220753094722512_5962910048863516732_n.jpg" alt="details-image">
+                <img src="{{product.imageUrl}}" alt={{product.name}}>
             </div>
             <div class="details-content">
                 <div class="action">
@@ -22,14 +22,12 @@
                 </div>
                 <div class="content">
                     <h3 class="product-name">
-                        Product name
+                       {{product.name}}
                     </h3>
-                    <h4 class="product-brand"><i class="fa-solid fa-gift"></i>Brand: Brand name</h4>
-                    <p class="description"><i class="fa-solid fa-list-ul"></i>Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Quam rerum
-                        consequuntur cum, nesciunt saepe obcaecati animi quasi nobis tenetur.</p>
-                    <p class="time"><i class="fa-regular fa-clock"></i>Time for production: 3 days</p>
-                    <p class="status"><i class="fa-solid fa-bookmark"></i>Status: Available</p>
+                    <h4 class="product-brand"><i class="fa-solid fa-gift"></i>Brand: {{product.brand}}</h4>
+                    <p class="description"><i class="fa-solid fa-list-ul"></i>{{product.description}}</p>
+                    <p class="time"><i class="fa-regular fa-clock"></i>Time for production: {{product.time}}</p>
+                    <p class="status"><i class="fa-solid fa-bookmark"></i>Status: {{product.status}}</p>
                 </div>
 
             </div>
