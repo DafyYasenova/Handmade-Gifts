@@ -16,18 +16,34 @@
                     <div class="input-box">
                         <input type="text" placeholder="Email" name="email" formControlName="email">
                         <i class="fa-solid fa-envelope"></i>
+
+                        <ng-container *ngIf="form.get('email')?.touched">
+                            <p class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required!</p>
+                            <p class="error" *ngIf="form.get('email')?.errors?.['emailValidator']">Email is invalid!</p>
+                        </ng-container>
+
                     </div>
 
                     <ng-container formGroupName="passGroup">
                         <div class="input-box">
                             <input type="password" placeholder="Password" name="password" formControlName="password">
-                            <i class="fa-solid fa-lock"></i>
+                            <i class="fa-solid fa-lock"></i> 
+                          
                         </div>
                         <div class="input-box">
                             <input type="password" placeholder="Repeat password" name="rePassword"
                                 formControlName="rePassword">
                             <i class="fa-solid fa-lock"></i>
                         </div>
+                           
+                        <!-- <ng-container *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength'] && form.get('passGroup')?.get('password')?.touched">
+                            <p class="error">Password must be at least 5 characters long.</p>
+                        </ng-container> -->
+                        <ng-container *ngIf="form.get('passGroup')?.get('rePassword')?.touched">
+                            <!-- <p class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']">Password must be at least 5 characters long.</p> -->
+                            <p class="error" *ngIf="form.get('passGroup')?.errors?.['matchPasswordsValidator'] || form.get('passGroup')?.get('rePassword')?.errors?.['required']">Passwords don't match!</p>
+                        </ng-container>
+                    
                     </ng-container>
 
                     <button type="submit" class="btn">Register</button>
