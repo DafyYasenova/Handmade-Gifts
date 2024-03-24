@@ -36,11 +36,13 @@
                             <i class="fa-solid fa-lock"></i>
                         </div>
                            
-                        <!-- <ng-container *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength'] && form.get('passGroup')?.get('password')?.touched">
-                            <p class="error">Password must be at least 5 characters long.</p>
-                        </ng-container> -->
+                        <ng-container *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength'] && form.get('passGroup')?.get('password')?.touched">
+                            <p class="error">Password must be at least 6 characters long.</p>
+                        </ng-container>
+                        <ng-container *ngIf="form.get('passGroup')?.get('password')?.errors?.['maxlength'] && form.get('passGroup')?.get('password')?.touched">
+                            <p class="error">Password must be at less than 15 characters.</p>
+                        </ng-container>
                         <ng-container *ngIf="form.get('passGroup')?.get('rePassword')?.touched">
-                            <!-- <p class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']">Password must be at least 5 characters long.</p> -->
                             <p class="error" *ngIf="form.get('passGroup')?.errors?.['matchPasswordsValidator'] || form.get('passGroup')?.get('rePassword')?.errors?.['required']">Passwords don't match!</p>
                         </ng-container>
                     
