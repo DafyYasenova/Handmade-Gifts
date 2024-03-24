@@ -1,23 +1,27 @@
 <section class="banner-forms">
     <section class="section-register">
         <div class="container">
-            <form action="">
+            <form [formGroup]="form" (ngSubmit)="register()">
                 <div class="wrapper">
                     <h3>Register</h3>
                     <div class="input-box">
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Username" name="username"
+                        formControlName="username">
                         <i class="fa-solid fa-user"></i>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Email"
+                        name="email"
+                        formControlName="email">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password"
+                        name="password" formControlName="password">
                         <i class="fa-solid fa-lock"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Repeat password">
+                        <input type="password" placeholder="Repeat password" name="rePassword" formControlName="rePassword">
                         <i class="fa-solid fa-lock"></i>
                     </div>
                     <button type="submit" class="btn">Register</button>
