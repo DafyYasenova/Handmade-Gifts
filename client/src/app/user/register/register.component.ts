@@ -10,15 +10,19 @@ export class RegisterComponent {
 
   form = this.fb.group({
     //controls
-    username: ['dummy', ],
+    username: ['dummy',],
     email: ['dummy@abv.bg'],
-    password: ['123'],
-    rePassword: ['123123'],
+
+    passGroup: this.fb.group({
+      
+      password: ['123'],
+      rePassword: ['123123'],
+    })
   });
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder) { }
 
   register(): void {
-    if(this.form.invalid){
+    if (this.form.invalid) {
       return;
     }
 
