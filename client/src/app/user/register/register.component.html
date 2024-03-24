@@ -1,6 +1,7 @@
 <section class="banner-forms">
     <section class="section-register">
         <div class="container">
+
             <form [formGroup]="form" (ngSubmit)="register()">
                 <div class="wrapper">
                     <h3>Register</h3>
@@ -40,7 +41,7 @@
                             <p class="error">Password must be at least 6 characters long.</p>
                         </ng-container>
                         <ng-container *ngIf="form.get('passGroup')?.get('password')?.errors?.['maxlength'] && form.get('passGroup')?.get('password')?.touched">
-                            <p class="error">Password must be at less than 15 characters.</p>
+                            <p class="error">Password must be less than 15 characters.</p>
                         </ng-container>
                         <ng-container *ngIf="form.get('passGroup')?.get('rePassword')?.touched">
                             <p class="error" *ngIf="form.get('passGroup')?.errors?.['matchPasswordsValidator'] || form.get('passGroup')?.get('rePassword')?.errors?.['required']">Passwords don't match!</p>
@@ -48,7 +49,8 @@
                     
                     </ng-container>
 
-                    <button type="submit" class="btn">Register</button>
+                    <button [disabled]="form.invalid"
+                    [style]="{backgroundColor: form.invalid ? '#ccc' : '#fff'}" type="submit" class="btn">Register</button>
                     <div class="login-link">
                         <p>Have an acount? <a routerLink="/login">Login</a></p>
                     </div>

@@ -10,10 +10,12 @@ import { matchPasswordsValidator } from 'src/app/shared/utils/match-passwords-va
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  
+  constructor(private fb: FormBuilder) { }
 
   form = this.fb.group({
    
-    username: ['',[Validators.required, Validators.minLength(5)]],
+    username: ['',[Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
     email: ['', [Validators.required, emailValidator(EMAIL_DOMAINS)]],
 
     passGroup: this.fb.group({
@@ -24,11 +26,13 @@ export class RegisterComponent {
       validators: [matchPasswordsValidator('password','rePassword')],
     })
   });
-  constructor(private fb: FormBuilder) { }
+  
 
   register(): void {
     if (this.form.invalid) {
       return;
+    } else{
+      // todo implement register function
     }
 
     console.log(this.form.value)
