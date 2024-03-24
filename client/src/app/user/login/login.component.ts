@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { EMAIL_DOMAINS } from 'src/app/constants';
+import { FormBuilder, Validators } from '@angular/forms';
+import { emailValidator } from 'src/app/shared/utils/email-validator';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +12,26 @@ import { EMAIL_DOMAINS } from 'src/app/constants';
 })
 export class LoginComponent {
 
-  domains = EMAIL_DOMAINS;
-  
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private fb: FormBuilder,  private userService: UserService, private router: Router) { }
+  // constructor(private fb: FormBuilder,  ) { }
+ 
 
-  login(event: Event, email: string, password: string) {
-    event.preventDefault();
-    this.userService.login();
-    this.router.navigate(['/'])
+  form = this.fb.group({
+
+    email: ['', [Validators.required, emailValidator(EMAIL_DOMAINS)]],
+    password: ['', [Validators.required , Validators.minLength(6), Validators.maxLength(15)]],
+  })
+
+  // login(event: Event, email: string, password: string) {
+  login() : void{
+  
+    if (this.form.invalid) {
+      return;
+    } else{
+      // todo implement login function
+      this.userService.login();
+      this.router.navigate(['/'])
+    }
 
   }
 }
