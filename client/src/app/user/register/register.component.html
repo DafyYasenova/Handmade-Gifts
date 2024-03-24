@@ -7,6 +7,11 @@
                     <div class="input-box">
                         <input type="text" placeholder="Username" name="username" formControlName="username">
                         <i class="fa-solid fa-user"></i>
+
+                        <ng-container *ngIf="form.get('username')?.touched">
+                            <p class="error" *ngIf="form.get('username')?.errors?.['required']">Username is required!</p>
+                            <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">Username must be at least 5 characters!</p>
+                        </ng-container>
                     </div>
                     <div class="input-box">
                         <input type="text" placeholder="Email" name="email" formControlName="email">

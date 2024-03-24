@@ -94,3 +94,11 @@
 .section-register .container .wrapper .login-link p a:hover {
     text-decoration: underline;
 }
+
+
+.input-box .error {
+    color: rgba(255, 0, 0, 0.804);
+    font-size: 0.9em;
+    padding-top: 0.2em;
+    
+}
