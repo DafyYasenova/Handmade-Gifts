@@ -50,7 +50,6 @@
                         <ng-container *ngIf="inputImageUrl.touched">
                             <div class="error-container">
                                 <p class="error" *ngIf="inputImageUrl.hasError('pattern')">Please enter a valid URL!</p>
-                                
                             </div>
                         </ng-container>
 
@@ -62,20 +61,45 @@
                             <input type="text" name="description" id="description" ngModel #inputDescription="ngModel"
                                 required minlength="5" maxlength="200">
                         </div>
+                        <ng-container *ngIf="inputDescription.touched">
+                            <div class="error-container">
+                                <p class="error" *ngIf="inputDescription?.errors?.['required']">Description is required!</p>
+                                <p class="error" *ngIf="inputDescription?.errors?.['minlength']">Description must be at least
+                                    5 characters!</p>
+                                <p class="error" *ngIf="inputDescription?.errors?.['maxlength']">Description must be less than
+                                    200 characters!</p>
+                            </div>
+                        </ng-container>
 
                     </div>
                     <div class="input-box">
                         <div class="input-container">
                             <label for="time">Time for production</label>
                             <input type="text" name="time" id="time" ngModel #inputTime="ngModel" required minlength="3"
-                                maxlength="10">
+                                maxlength="20">
                         </div>
+                        <ng-container *ngIf="inputTime.touched">
+                            <div class="error-container">
+                                <p class="error" *ngIf="inputTime?.errors?.['required']">Time is required!</p>
+                                <p class="error" *ngIf="inputTime?.errors?.['minlength']">Time must be at least
+                                    3 characters!</p>
+                                <p class="error" *ngIf="inputTime?.errors?.['maxlength']">TTime must be less than
+                                    20 characters!</p>
+                            </div>
+                        </ng-container>
                     </div>
                     <div class="input-box">
                         <div class="input-container">
                             <label for="price">Price</label>
-                            <input type="number" name="price" id="price" ngModel #inputPrice="ngModel" required>
+                            <input type="number" name="price" id="price" ngModel #inputPrice="ngModel" required min="0" max="10000">
                         </div>
+                        <ng-container *ngIf="inputPrice.touched">
+                            <div class="error-container">
+                                <p class="error" *ngIf="inputPrice?.errors?.['required']">Price is required!</p>
+                                <p class="error" *ngIf="inputPrice?.errors?.['min']">Price must be greater than 0!</p>
+                                <p class="error" *ngIf="inputPrice?.errors?.['max']">Price must be less than 10000!</p>
+                            </div>
+                        </ng-container>
                     </div>
 
 
@@ -83,7 +107,6 @@
                         <div class="input-container">
                             <label for="category">Category</label>
                             <div>
-                                <!-- input? -->
                                 <select value='' placeholder="Category" name="category" id="category" ngModel
                                     #inputCategory="ngModel" required>
 
