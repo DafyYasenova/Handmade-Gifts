@@ -33,18 +33,20 @@ export class ApiService {
   }
 
 
-  createProduct(product: string, brand: string, imageUrl: string, description: string, price: number, category: string, status: string, time: string) {
+  // createProduct(name: string, brand: string, imageUrl: string, description: string, price: number, category: string, status: string, time: string) {
+  createProduct(product: Product) {
     const { apiUrl } = environment;
-    const payload = {
-      product,
-      brand,
-      imageUrl,
-      description,
-      price,
-      category,
-      status,
-      time
-    }
+    const payload = product;
+    // { 
+    //   name,
+    //   brand,
+    //   imageUrl,
+    //   description,
+    //   price,
+    //   category,
+    //   status,
+    //   time
+    // }
 
     return this.http.post<Product>(`${apiUrl}/products`, payload)
   }
