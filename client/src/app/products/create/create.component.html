@@ -153,7 +153,7 @@
                                 <label for="to-order">To order</label>
                             </div>
                         </div>
-                        <ng-container *ngIf="inputStatus.touched">
+                        <ng-container *ngIf="inputStatus.touched && !inputStatus.value">
                             <div class="error-container">
                                 <p class="error" *ngIf="inputStatus?.errors?.['required']">Status is required!
                                 </p>
@@ -161,7 +161,8 @@
                             </div>
                         </ng-container>
                     </div>
-                    <button (click)="addProduct(form)" class="btn">Create</button>
+                    <button [disabled]="form.invalid"
+                    [style]="{backgroundColor: form.invalid ? '#ccc' : '#fff'}" (click)="addProduct(form)" class="btn">Create</button>
 
                 </div>
             </form>
