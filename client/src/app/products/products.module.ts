@@ -5,6 +5,7 @@ import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     CreateComponent
   ],
   imports: [
-    CommonModule, RouterModule, SharedModule,
+    CommonModule, RouterModule, SharedModule, FormsModule,
   ],
   exports: [
     GalleryComponent,

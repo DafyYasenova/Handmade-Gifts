@@ -1,68 +1,118 @@
 <section class="banner-forms">
     <section class="section-create">
         <div class="container">
-            <form action="" method="post">
+            <form #form="ngForm" (ngSubmit)="addProduct(form)">
                 <div class="wrapper">
                     <h3>Create product</h3>
 
                     <div class="input-box">
-                        <label for="name">Product name</label>
-                        <input type="text" name="name" id="name" #inputName>
+                        <div class="input-container">
+                            <label for="name">Product name</label>
+                            <input type="text" name="name" id="name" ngModel #inputName="ngModel" required minlength="5"
+                                maxlength="20">
+                        </div>
+                        <ng-container *ngIf="inputName.touched">
+                            <div class="error-container">
+                                <p class="error" *ngIf="inputName?.errors?.['required']">Product name is required!</p>
+                                <p class="error" *ngIf="inputName?.errors?.['minlength']">Product name must be at least
+                                    5 characters!</p>
+                                <p class="error" *ngIf="inputName?.errors?.['maxlength']">Product name must be less than
+                                    20 characters!</p>
+                            </div>
+                        </ng-container>
                     </div>
                     <div class="input-box">
-                        <label for="brand">Brand</label>
-                        <input type="text" name="brand" id="brand" #inputBrand>
+                        <div class="input-container">
+                            <label for="brand">Brand</label>
+                            <input type="text" name="brand" id="brand" ngModel #inputBrand="ngModel" required
+                                minlength="5" maxlength="20">
+                        </div>
+                        <ng-container *ngIf="inputBrand.touched">
+                            <div class="error-container">
+                                <p class="error" *ngIf="inputBrand?.errors?.['required']">Brand name is required!</p>
+                                <p class="error" *ngIf="inputBrand?.errors?.['minlength']">Brand name must be at least
+                                    5 characters!</p>
+                                <p class="error" *ngIf="inputBrand?.errors?.['maxlength']">Brand name must be less than
+                                    20 characters!</p>
+                            </div>
+                        </ng-container>
                     </div>
                     <div class="input-box">
-                        <label for="imageUrl">Image</label>
-                        <input type="text" name="imageUrl" id="imageUrl" #inputImageUrl>
+                        <div class="input-container">
+                            <label for="imageUrl">Image</label>
+                            <input type="text" name="imageUrl" id="imageUrl" ngModel #inputImageUrl="ngModel" required>
+                        </div>
+                        <ng-container *ngIf="inputBrand.touched">
+                            <div class="error-container">
+                                <p class="error" *ngIf="inputBrand?.errors?.['required']">Image url is required!</p>
+                                <p class="error" *ngIf="inputBrand?.errors?.['']">Invalid URL!</p>
+                                
+                            </div>
+                        </ng-container>
+
                     </div>
 
                     <div class="input-box">
-                        <label for="description">Description</label>
-                        <input type="text" name="description" id="description" #inputDescription>
+                        <div class="input-container">
+                            <label for="description">Description</label>
+                            <input type="text" name="description" id="description" ngModel #inputDescription="ngModel"
+                                required minlength="5" maxlength="200">
+                        </div>
+
                     </div>
                     <div class="input-box">
-                        <label for="time">Time for production</label>
-                        <input type="text" name="time" id="time" #inputTime>
+                        <div class="input-container">
+                            <label for="time">Time for production</label>
+                            <input type="text" name="time" id="time" ngModel #inputTime="ngModel" required minlength="3"
+                                maxlength="10">
+                        </div>
                     </div>
                     <div class="input-box">
-                        <label for="price">Price</label>
-                        <input type="number" name="price" id="price" #inputPrice>
+                        <div class="input-container">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" id="price" ngModel #inputPrice="ngModel" required>
+                        </div>
                     </div>
 
 
                     <div class="category">
-                        <label for="category">Category</label>
-                        <div>
-                            <!-- input? -->
-                            <select value='' placeholder="Category" name="category" id="category" #inputCategory>
+                        <div class="input-container">
+                            <label for="category">Category</label>
+                            <div>
+                                <!-- input? -->
+                                <select value='' placeholder="Category" name="category" id="category" ngModel
+                                    #inputCategory="ngModel" required>
 
-                                <option value="Photo frame">Photo frame</option>
-                                <option value="Decoupage set">Decoupage set</option>
-                                <option value="Moss">Moss</option>
-                                <option value="Birthday frame">Birthday frame</option>
-                                <option value="Flowers">Flowers</option>
-                                <option value="Other">Other</option>
-                            </select>
+                                    <option value="Photo frame">Photo frame</option>
+                                    <option value="Decoupage set">Decoupage set</option>
+                                    <option value="Moss">Moss</option>
+                                    <option value="Birthday frame">Birthday frame</option>
+                                    <option value="Flowers">Flowers</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
                         </div>
+
 
                     </div>
 
                     <!-- input? -->
-                    <label for="status">Status</label>
-                    <div class="status">
-                        <input type="radio" id="available" name="status" value="" #inputStatus />
-                        <label for="available">Available</label>
-                                                                            <!-- stasus>? -->
-                        <input type="radio" id="to-order" name="status" value="" #inputStatus />
+                    <div class="input-container">
+                        <label for="status">Status</label>
 
-                        <label for="to-order">To order</label>
+                        <div class="status">
+                            <input type="radio" id="available" name="status" value="" ngModel #inputStatus="ngModel"
+                                required />
+                            <label for="available">Available</label>
+                            <!-- stasus>? -->
+                            <input type="radio" id="to-order" name="status" value="" ngModel #inputStatus="ngModel"
+                                required />
+
+                            <label for="to-order">To order</label>
+                        </div>
 
                     </div>
-                    <button
-                        (click)="addProduct($event,inputName.value, inputBrand.value, inputImageUrl.value, inputDescription.value,inputPrice.valueAsNumber, inputCategory.value, inputStatus.value, inputTime.value)"
-                        class="btn">Create</button>
+                    <button (click)="addProduct(form)" class="btn">Create</button>
 
                 </div>
             </form>
