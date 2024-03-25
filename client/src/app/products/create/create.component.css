@@ -33,17 +33,20 @@
 
 }
 
-.section-create .container .wrapper .input-box .input-container{
+.section-create .container .wrapper .input-box .input-container {
     width: 100%;
     height: 3em;
     margin: 2em 0;
     position: relative;
 
 }
-.section-create .container .wrapper .input-box .input-container label {
+
+.section-create .container .wrapper .input-box .input-container label,
+.select-box label {
     font-weight: 500;
     font-size: 1.1em;
 }
+
 .section-create .container .wrapper .category .input-container select {
     border: 0;
     height: 3em;
@@ -91,27 +94,31 @@
     cursor: pointer;
     font-size: 1.2em;
     color: #F05F8C;
-    
+
 }
 
 .section-create .container .wrapper .status {
     padding-bottom: 1em;
 }
 
-.section-create .container .wrapper input[type="radio"]{
+.section-create .container .wrapper input[type="radio"] {
     transform: scale(1.5);
 }
 
-.section-create .container .wrapper .status input[type="radio"] + label {
+.section-create .container .wrapper .status input[type="radio"]+label {
     padding-left: 1em;
-    margin-right: 2em; 
-   
+    margin-right: 2em;
 }
 
-.input-box .error-container .error{
+.input-row .status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-box .error-container .error {
     display: block;
     color: rgba(255, 0, 0, 0.804);
     font-size: 0.9em;
     padding-top: 0.5em;
-
 }

@@ -128,29 +128,38 @@
                             </div>
                             <ng-container *ngIf="inputCategory.touched">
                                 <div class="error-container">
-                                    <p class="error" *ngIf="inputCategory?.errors?.['required']">Category is required!</p>
+                                    <p class="error" *ngIf="inputCategory?.errors?.['required']">Category is required!
+                                    </p>
 
                                 </div>
                             </ng-container>
                         </div>
                     </div>
 
-                    <!-- <div class="input-box"> -->
-                    <div class="input-container">
-                        <label for="status">Status</label>
+                    <div class="select-box">
+                        <div class="input-container">
+                            <label for="status">Status</label>
 
-                        <div class="status">
-                            <input type="radio" id="available" name="status" value="Available" ngModel
-                                #inputStatus="ngModel" required />
-                            <label for="available">Available</label>
-
-                            <input type="radio" id="to-order" name="status" value="To order" ngModel
-                                #inputStatus="ngModel" required />
-
-                            <label for="to-order">To order</label>
-                            <!-- </div> -->
                         </div>
+                        <div class="input-row">
+                            <div class="status">
+                                <input type="radio" id="available" name="status" value="Available" ngModel
+                                    #inputStatus="ngModel" required />
+                                <label for="available">Available</label>
 
+                                <input type="radio" id="to-order" name="status" value="To order" ngModel
+                                    #inputStatus="ngModel" required />
+
+                                <label for="to-order">To order</label>
+                            </div>
+                        </div>
+                        <ng-container *ngIf="inputStatus.touched">
+                            <div class="error-container">
+                                <p class="error" *ngIf="inputStatus?.errors?.['required']">Status is required!
+                                </p>
+
+                            </div>
+                        </ng-container>
                     </div>
                     <button (click)="addProduct(form)" class="btn">Create</button>
 
