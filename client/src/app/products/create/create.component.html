@@ -21,6 +21,7 @@
                             </div>
                         </ng-container>
                     </div>
+
                     <div class="input-box">
                         <div class="input-container">
                             <label for="brand">Brand</label>
@@ -37,14 +38,16 @@
                             </div>
                         </ng-container>
                     </div>
+
                     <div class="input-box">
                         <div class="input-container">
                             <label for="imageUrl">Image</label>
-                            <input type="text" name="imageUrl" id="imageUrl" ngModel #inputImageUrl="ngModel" required [pattern]="imageUrlPattern">
+                            <input type="text" name="imageUrl" id="imageUrl" ngModel #inputImageUrl="ngModel" required
+                                [pattern]="imageUrlPattern">
                         </div>
                         <ng-container *ngIf="inputImageUrl.touched">
                             <div class="error-container">
-                                <p class="error" *ngIf="inputImageUrl?.errors?.['required']">Image URL is required!</p> 
+                                <p class="error" *ngIf="inputImageUrl?.errors?.['required']">Image URL is required!</p>
                             </div>
                         </ng-container>
                         <ng-container *ngIf="inputImageUrl.touched">
@@ -52,7 +55,6 @@
                                 <p class="error" *ngIf="inputImageUrl.hasError('pattern')">Please enter a valid URL!</p>
                             </div>
                         </ng-container>
-
                     </div>
 
                     <div class="input-box">
@@ -63,15 +65,18 @@
                         </div>
                         <ng-container *ngIf="inputDescription.touched">
                             <div class="error-container">
-                                <p class="error" *ngIf="inputDescription?.errors?.['required']">Description is required!</p>
-                                <p class="error" *ngIf="inputDescription?.errors?.['minlength']">Description must be at least
+                                <p class="error" *ngIf="inputDescription?.errors?.['required']">Description is required!
+                                </p>
+                                <p class="error" *ngIf="inputDescription?.errors?.['minlength']">Description must be at
+                                    least
                                     5 characters!</p>
-                                <p class="error" *ngIf="inputDescription?.errors?.['maxlength']">Description must be less than
+                                <p class="error" *ngIf="inputDescription?.errors?.['maxlength']">Description must be
+                                    less than
                                     200 characters!</p>
                             </div>
                         </ng-container>
-
                     </div>
+
                     <div class="input-box">
                         <div class="input-container">
                             <label for="time">Time for production</label>
@@ -88,10 +93,12 @@
                             </div>
                         </ng-container>
                     </div>
+
                     <div class="input-box">
                         <div class="input-container">
                             <label for="price">Price</label>
-                            <input type="number" name="price" id="price" ngModel #inputPrice="ngModel" required min="0" max="10000">
+                            <input type="number" name="price" id="price" ngModel #inputPrice="ngModel" required min="0"
+                                max="10000">
                         </div>
                         <ng-container *ngIf="inputPrice.touched">
                             <div class="error-container">
@@ -102,40 +109,46 @@
                         </ng-container>
                     </div>
 
+                    <div class="input-box">
+                        <div class="category">
+                            <div class="input-container">
+                                <label for="category">Category</label>
+                                <div>
+                                    <select placeholder="Category" name="category" id="category" ngModel
+                                        #inputCategory="ngModel" required>
 
-                    <div class="category">
-                        <div class="input-container">
-                            <label for="category">Category</label>
-                            <div>
-                                <select value='' placeholder="Category" name="category" id="category" ngModel
-                                    #inputCategory="ngModel" required>
-
-                                    <option value="Photo frame">Photo frame</option>
-                                    <option value="Decoupage set">Decoupage set</option>
-                                    <option value="Moss">Moss</option>
-                                    <option value="Birthday frame">Birthday frame</option>
-                                    <option value="Flowers">Flowers</option>
-                                    <option value="Other">Other</option>
-                                </select>
+                                        <option value="Photo frame">Photo frame</option>
+                                        <option value="Decoupage set">Decoupage set</option>
+                                        <option value="Moss">Moss</option>
+                                        <option value="Birthday frame">Birthday frame</option>
+                                        <option value="Flowers">Flowers</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
                             </div>
+                            <ng-container *ngIf="inputCategory.touched">
+                                <div class="error-container">
+                                    <p class="error" *ngIf="inputCategory?.errors?.['required']">Category is required!</p>
+
+                                </div>
+                            </ng-container>
                         </div>
-
-
                     </div>
 
-                    <!-- input? -->
+                    <!-- <div class="input-box"> -->
                     <div class="input-container">
                         <label for="status">Status</label>
 
                         <div class="status">
-                            <input type="radio" id="available" name="status" value="" ngModel #inputStatus="ngModel"
-                                required />
+                            <input type="radio" id="available" name="status" value="Available" ngModel
+                                #inputStatus="ngModel" required />
                             <label for="available">Available</label>
-                            <!-- stasus>? -->
-                            <input type="radio" id="to-order" name="status" value="" ngModel #inputStatus="ngModel"
-                                required />
+
+                            <input type="radio" id="to-order" name="status" value="To order" ngModel
+                                #inputStatus="ngModel" required />
 
                             <label for="to-order">To order</label>
+                            <!-- </div> -->
                         </div>
 
                     </div>
