@@ -40,12 +40,16 @@
                     <div class="input-box">
                         <div class="input-container">
                             <label for="imageUrl">Image</label>
-                            <input type="text" name="imageUrl" id="imageUrl" ngModel #inputImageUrl="ngModel" required>
+                            <input type="text" name="imageUrl" id="imageUrl" ngModel #inputImageUrl="ngModel" required [pattern]="imageUrlPattern">
                         </div>
-                        <ng-container *ngIf="inputBrand.touched">
+                        <ng-container *ngIf="inputImageUrl.touched">
                             <div class="error-container">
-                                <p class="error" *ngIf="inputBrand?.errors?.['required']">Image url is required!</p>
-                                <p class="error" *ngIf="inputBrand?.errors?.['']">Invalid URL!</p>
+                                <p class="error" *ngIf="inputImageUrl?.errors?.['required']">Image URL is required!</p> 
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="inputImageUrl.touched">
+                            <div class="error-container">
+                                <p class="error" *ngIf="inputImageUrl.hasError('pattern')">Please enter a valid URL!</p>
                                 
                             </div>
                         </ng-container>
