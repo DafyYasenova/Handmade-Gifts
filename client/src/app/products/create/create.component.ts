@@ -19,23 +19,23 @@ export class CreateComponent {
 
     if (form.invalid) {
       return;
-    } else {
-    
-      Object.keys(form.value).forEach(key => {
-        if (typeof form.value[key] === 'string') {
-          form.value[key] = form.value[key].trim();
-        }
-      });
-     
-
-      this.apiService.createProduct(form.value).subscribe((data) => {
-
-        console.log({ data })
-        this.router.navigate(['/products'])
-      })
-      console.log(form.value);
-
     }
+
+
+    Object.keys(form.value).forEach(key => {
+      if (typeof form.value[key] === 'string') {
+        form.value[key] = form.value[key].trim();
+      }
+    });
+
+
+    this.apiService.createProduct(form.value).subscribe((data) => {
+
+      this.router.navigate(['/products'])
+    })
+    console.log(form.value);
+
+
   }
   // addProduct(event: Event, name: string, brand: string, imageUrl: string, description: string, price: number, category: string, status: string, time: string) {
   //   event.preventDefault();

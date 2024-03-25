@@ -1,19 +1,23 @@
 /* details */
 .details .container{
  padding: 3em 0;
+
 }
 .details .container .details-item {
     display: flex;
     gap: 2em;
     align-items: stretch;
+    justify-content: center;
 }
 
 
 .details .container .details-item .details-img {
-    flex: 1 0 40%;
+    /* flex: 1 0 40%; */
+    max-width: 25em;
     border: 2px solid #fff;
     border-radius: 0.2em;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+   
 
 }
 
@@ -48,7 +52,7 @@ h4 {
     padding-right: 1em;
 }
 .details .container .details-item .details-content .action{
-    width: 22em;
+    width: 7em;
    
     align-self: center;
 }
