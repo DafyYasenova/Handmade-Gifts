@@ -1,0 +1,69 @@
+{
+    "3fdc2861-b343-4e22-8729-1e7de07e7e49": {
+        "name": "Product one",
+        "brand": "Dafy's Art Studio",
+        "imageUrl": "https://i.pinimg.com/564x/df/0d/f0/df0df09334b77ce0403559ec4b1c4e7a.jpg",
+        "description": "wine bottle with two glasses",
+        "price": "112",
+        "category": "Decoupage",
+        "status": "Available",
+        "time": "3 Days",
+        "_id": "3fdc2861-b343-4e22-8729-1e7de07e7e49"
+    },
+    "62c9010e-b90f-4ed7-b0cc-8f03cda6cec1": {
+        "name": "Cards",
+        "brand": "Dafy's Art Studio",
+        "imageUrl": "https://pinkandposh.co.uk/wp-content/uploads/2022/01/Luxury-Handmade-Birthday-Cards-Pink-Flower-Basket-A5-Large-Card-scaled.jpg",
+        "description": "Photo frame Butterflies",
+        "price": "129",
+        "category": "Card",
+        "status": "Available",
+        "time": "2 Days",
+        "_id": "62c9010e-b90f-4ed7-b0cc-8f03cda6cec1"
+    },
+    "62c9010e-b90f-4ed7-b0cc-8f03cda6ce55": {
+        "name": "flies",
+        "brand": "Dafy's Art Studio",
+        "imageUrl": "https://4.imimg.com/data4/QT/UX/ANDROID-12778050/product-500x500.jpeg",
+        "description": "Photo frame Butterflies",
+        "price": "129",
+        "category": "Photo Frame",
+        "status": "Available",
+        "time": "2 Days",
+        "_id": "62c9010e-b90f-4ed7-b0cc-8f03cda6ce55"
+    },
+    "3fdc2861-b343-4e22-8729-1e7de07e7e48": {
+        "name": "Product one",
+        "brand": "Dafy's Art Studio",
+        "imageUrl": "https://i.pinimg.com/564x/df/0d/f0/df0df09334b77ce0403559ec4b1c4e7a.jpg",
+        "description": "wine bottle with two glasses",
+        "price": "112",
+        "category": "Decoupage",
+        "status": "Available",
+        "time": "3 Days",
+        "_id": "3fdc2861-b343-4e22-8729-1e7de07e7e48"
+    },
+    "62c9010e-b90f-4ed7-b0cc-8f03cda6cec2": {
+        "name": "Cards",
+        "brand": "Dafy's Art Studio",
+        "imageUrl": "https://pinkandposh.co.uk/wp-content/uploads/2022/01/Luxury-Handmade-Birthday-Cards-Pink-Flower-Basket-A5-Large-Card-scaled.jpg",
+        "description": "Photo frame Butterflies",
+        "price": "129",
+        "category": "Card",
+        "status": "Available",
+        "time": "2 Days",
+        "_id": "62c9010e-b90f-4ed7-b0cc-8f03cda6cec2"
+    },
+    "62c9010e-b90f-4ed7-b0cc-8f03cda6ce56": {
+        "name": "flies",
+        "brand": "Dafy's Art Studio",
+        "imageUrl": "https://4.imimg.com/data4/QT/UX/ANDROID-12778050/product-500x500.jpeg",
+        "description": "Photo frame Butterflies",
+        "price": "129",
+        "category": "Photo Frame",
+        "status": "Available",
+        "time": "2 Days",
+        "_id": "62c9010e-b90f-4ed7-b0cc-8f03cda6ce56"
+    }
+}
+
