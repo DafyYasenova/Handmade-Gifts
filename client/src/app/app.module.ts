@@ -10,6 +10,7 @@ import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserModule } from './user/user.module';
 import { ProductsModule } from './products/products.module';
+import { appInterceptorProvider } from './app.interceptor';
 
 
 
@@ -22,7 +23,7 @@ import { ProductsModule } from './products/products.module';
   imports: [
     BrowserModule,
     CoreModule,
-    SharedModule,
+    SharedModule, 
     PagesModule,
     HttpClientModule,
     UserModule,
@@ -31,7 +32,7 @@ import { ProductsModule } from './products/products.module';
     
     
   ],
-  providers: [],
+  providers: [appInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
