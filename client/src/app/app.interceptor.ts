@@ -7,13 +7,14 @@ import { environment } from "src/environments/environment.development";
 const { apiUrl } = environment;
 @Injectable()
 class AppInterceptor implements HttpInterceptor {
-    API = '/jsonstore'
+    API = '/users'
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log(req);
 
         if (req.urlWithParams.startsWith(this.API)) {
             req = req.clone({
-                url: req.url.replace(this.API, apiUrl)
+                url: req.url.replace(this.API, apiUrl),
+                withCredentials: true,
             })
         }
         return next.handle(req);

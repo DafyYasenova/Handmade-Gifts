@@ -12,26 +12,31 @@ import { emailValidator } from 'src/app/shared/utils/email-validator';
 })
 export class LoginComponent {
 
-  constructor(private fb: FormBuilder,  private userService: UserService, private router: Router) { }
-  // constructor(private fb: FormBuilder,  ) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
  
+
 
   form = this.fb.group({
 
     email: ['', [Validators.required, emailValidator(EMAIL_DOMAINS)]],
-    password: ['', [Validators.required , Validators.minLength(6), Validators.maxLength(15)]],
+    password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
   })
 
-  // login(event: Event, email: string, password: string) {
-  login() : void{
   
+  login(): void {
+
     if (this.form.invalid) {
       return;
-    } else{
-      // todo implement login function
-      this.userService.login();
-      this.router.navigate(['/'])
     }
+
+    const { email, password } = this.form.value;
+
+   
+    this.userService.login(email!, password!).subscribe(() => {
+      this.router.navigate(['/'])
+
+    })
+
 
   }
 }
