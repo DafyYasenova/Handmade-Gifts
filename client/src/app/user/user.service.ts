@@ -1,27 +1,31 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, Subscription, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserService implements OnDestroy{
 
   private user$$ = new BehaviorSubject<User | undefined>(undefined);
-  private user$ = this.user$$.asObservable();
+  public user$ = this.user$$.asObservable();
 
   user: User | undefined;
-  USER_KEY = '[user]';
-
+  
+  userSubscription: Subscription;
+  
   get isLogged(): boolean {
     return !!this.user;
   }
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+   this.userSubscription =  this.user$.subscribe((user) =>{
+      this.user = user;
+    })
+  }
 
   login(email: string, password: string) {
-  
     
       return this.http.post<{ email: string, username: string, _id: string, accessToken: string }>(`${environment.apiUrl}/users/login`, { email, password })
         .pipe(
@@ -53,8 +57,6 @@ export class UserService {
 
     const { apiUrl } = environment;
 
-
-
     return this.http.post<{ username: string, email: string, _id: string, accessToken: string }>(`${apiUrl}/users/register`, {
       username,
       email,
@@ -69,11 +71,25 @@ export class UserService {
       localStorage.setItem('_id', response._id)
       localStorage.setItem('accessToken', response.accessToken);
 
-      console.log(response)
+      // console.log(response)
 
     }))
 
   }
 
-}
 
+logout() {
+  const { apiUrl} = environment;
+   return this.http.post<User>(`${apiUrl}/users/logout`, {})
+   .pipe(
+    tap(response => {
+      localStorage.clear();
+      this.user$$.next(undefined);
+    })
+   )
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe()
+  }
+}
