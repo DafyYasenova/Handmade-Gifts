@@ -9,17 +9,17 @@ import { environment } from 'src/environments/environment.development';
 })
 export class UserService {
 
- 
-  
+
+
   user: User | undefined;
   USER_KEY = '[user]';
-  
-  
+
+
   get isLogged(): boolean {
     return !!this.user;
   }
   constructor(private http: HttpClient) {
-    
+
     try {
       const lsUser = localStorage.getItem(this.USER_KEY) || '';
       this.user = JSON.parse(lsUser)
@@ -38,8 +38,29 @@ export class UserService {
 
     // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
 
-    return this.http.post<User>(`/users/login`, { email, password });
+    // return this.http.post<User>(`/users/login`, { email, password });
+
+    
+      return this.http.post<{ email: string, username: string, _id: string, accessToken: string }>(`${environment.apiUrl}/users/login`, { email, password })
+        .pipe(
+          tap(response => {
+            localStorage.setItem('username', response.username);
+            localStorage.setItem('email', response.email);
+            localStorage.setItem('userId', response._id);
+            localStorage.setItem('accessToken', response.accessToken);
   
+            // this.user$$.next({
+            //   email: response.email,
+            //   name: response.username,
+            //   _id: response._id,
+            //   accessToken: response.accessToken
+            // });
+       
+  
+          })
+        );
+  
+    
   }
 
 
@@ -47,24 +68,27 @@ export class UserService {
     username: string,
     email: string,
     password: string,
-   acessToken:string,
+    acessToken: string,
   ) {
 
-  const {apiUrl} =environment;
+    const { apiUrl } = environment;
 
 
 
-    return this.http.post<{username: string, email:string, _id: string,accessToken:string }>(`${apiUrl}/users/register`, {
+    return this.http.post<{ username: string, email: string, _id: string, accessToken: string }>(`${apiUrl}/users/register`, {
       username,
       email,
       password,
       acessToken,
-    }).pipe(tap(response =>{
+    })
+    .pipe(tap(
+      response => {
+
       localStorage.setItem('username', response.username);
       localStorage.setItem('email', response.email);
       localStorage.setItem('_id', response._id)
       localStorage.setItem('accessToken', response.accessToken);
-     
+
       console.log(response)
 
     }))

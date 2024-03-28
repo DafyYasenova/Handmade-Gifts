@@ -1342,229 +1342,97 @@
     };
 
     var seedData = {
-        "blinds": {
-            "41cb9fad-ae1c-4c3d-aa30-d4a3d3c8c5b7": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "Vertical Grey",
-                "productNumber": "V5454",
-                "colors": {
-                    "white": true,
-                    "yellow": true,
-                    "blue": true,
-                    "purple": false,
-                    "pink": true,
-                    "grey": true,
-                    "brown": true,
-                    "beige": true,
-                    "red": false,
-                    "orange": false,
-                    "violet": true
+        "products": {
+            
+                "3fdc2861-b343-4e22-8729-1e7de07e7e49": {
+                    "name": "Product one",
+                    "brand": "Dafy's Art Studio",
+                    "imageUrl": "https://i.pinimg.com/564x/df/0d/f0/df0df09334b77ce0403559ec4b1c4e7a.jpg",
+                    "description": "wine bottle with two glasses",
+                    "price": "112",
+                    "category": "Decoupage",
+                    "status": "Available",
+                    "time": "3 Days",
+                    "_id": "3fdc2861-b343-4e22-8729-1e7de07e7e49"
                 },
-                "imageUrl": "https://www.shtori-bg.com/images/products/pic_95616518.jpg",
-                "category": "Vertical Blinds",
-                "material": "cloth",
-                "description": "This is new generation on blind's world!",
-                "price": 112,
-                "_createdOn": 1700672941480,
-                "_id": "41cb9fad-ae1c-4c3d-aa30-d4a3d3c8c5b7"
-            },
-            "bbcec30f-64d7-481b-872b-0d8a2db58f4e": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "Butterfly's world",
-                "productNumber": "P5554",
-                "colors": {
-                    "white": true,
-                    "yellow": true,
-                    "blue": true,
-                    "purple": true,
-                    "pink": false,
-                    "grey": false,
-                    "brown": true,
-                    "beige": false,
-                    "red": true,
-                    "orange": true,
-                    "violet": true
+                "62c9010e-b90f-4ed7-b0cc-8f03cda6cec1": {
+                    "name": "Cards",
+                    "brand": "Dafy's Art Studio",
+                    "imageUrl": "https://pinkandposh.co.uk/wp-content/uploads/2022/01/Luxury-Handmade-Birthday-Cards-Pink-Flower-Basket-A5-Large-Card-scaled.jpg",
+                    "description": "Photo frame Butterflies",
+                    "price": "129",
+                    "category": "Card",
+                    "status": "Available",
+                    "time": "2 Days",
+                    "_id": "62c9010e-b90f-4ed7-b0cc-8f03cda6cec1"
                 },
-                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI4FzoAtXXaugKRfOERrR33OMqsrZf2FoGww&usqp=CAU",
-                "category": "Photo blinds",
-                "material": "Cotton",
-                "description": "This is a new generation in the world of blinds",
-                "price": 129,
-                "_createdOn": 1700672941479,
-                "_id": "bbcec30f-64d7-481b-872b-0d8a2db58f4e"
-            },
-            "7a5c2031-a60b-4353-8c53-5f28e2d0a7d7": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "Vertical Blinds",
-                "productNumber": "V644",
-                "colors": {
-                    "white": true,
-                    "yellow": true,
-                    "blue": false,
-                    "purple": false,
-                    "pink": true,
-                    "grey": true,
-                    "brown": true,
-                    "beige": true,
-                    "red": false,
-                    "orange": false,
-                    "violet": true
+                "62c9010e-b90f-4ed7-b0cc-8f03cda6ce55": {
+                    "name": "flies",
+                    "brand": "Dafy's Art Studio",
+                    "imageUrl": "https://4.imimg.com/data4/QT/UX/ANDROID-12778050/product-500x500.jpeg",
+                    "description": "Photo frame Butterflies",
+                    "price": "129",
+                    "category": "Photo Frame",
+                    "status": "Available",
+                    "time": "2 Days",
+                    "_id": "62c9010e-b90f-4ed7-b0cc-8f03cda6ce55"
                 },
-                "imageUrl": "https://rollhome.bg/wp-content/uploads/2020/02/Vertikalna-shtora-Plat-Karina-Print-89-mm.jpg",
-                "category": "",
-                "material": "cloth",
-                "description": "Vertical blind with a wide variety of colors",
-                "price": 89,
-                "_createdOn": 1700672941481,
-                "_id": "7a5c2031-a60b-4353-8c53-5f28e2d0a7d7"
-            },
-            "c92f5e70-8fa5-4c7f-a9df-bf1d254aaa4c": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "name": "Perfect Day",
-                "productNumber": "P55456",
-                "colors": {
-                    "white": true,
-                    "yellow": true,
-                    "blue": true,
-                    "purple": false,
-                    "pink": false,
-                    "grey": false,
-                    "brown": true,
-                    "beige": true,
-                    "red": false,
-                    "orange": false,
-                    "violet": true
+                "3fdc2861-b343-4e22-8729-1e7de07e7e48": {
+                    "name": "Product one",
+                    "brand": "Dafy's Art Studio",
+                    "imageUrl": "https://i.pinimg.com/564x/df/0d/f0/df0df09334b77ce0403559ec4b1c4e7a.jpg",
+                    "description": "wine bottle with two glasses",
+                    "price": "112",
+                    "category": "Decoupage",
+                    "status": "Available",
+                    "time": "3 Days",
+                    "_id": "3fdc2861-b343-4e22-8729-1e7de07e7e48"
                 },
-                "imageUrl": "https://aluroll.bg/wp-content/uploads/2020/09/den-i-nosht-4.png",
-                "category": "Day and nigth Blinds",
-                "material": "Cotton",
-                "description": "Day and night blinds. Perfectly idea for home design ",
-                "price": 139,
-                "_createdOn": 1700900686609,
-                "_id": "c92f5e70-8fa5-4c7f-a9df-bf1d254aaa4c"
-            },
-            "e645f7bf-35ca-446d-bc70-68c2e0070827": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "name": "Harmony Blinds",
-                "productNumber": "H5549",
-                "colors": {
-                    "white": true,
-                    "yellow": false,
-                    "blue": true,
-                    "purple": false,
-                    "pink": true,
-                    "grey": true,
-                    "brown": true,
-                    "beige": false,
-                    "red": false,
-                    "orange": true,
-                    "violet": true
+                "62c9010e-b90f-4ed7-b0cc-8f03cda6cec2": {
+                    "name": "Cards",
+                    "brand": "Dafy's Art Studio",
+                    "imageUrl": "https://pinkandposh.co.uk/wp-content/uploads/2022/01/Luxury-Handmade-Birthday-Cards-Pink-Flower-Basket-A5-Large-Card-scaled.jpg",
+                    "description": "Photo frame Butterflies",
+                    "price": "129",
+                    "category": "Card",
+                    "status": "Available",
+                    "time": "2 Days",
+                    "_id": "62c9010e-b90f-4ed7-b0cc-8f03cda6cec2"
                 },
-                "imageUrl": "https://zavesi.bg/media/cache/bd/a2/thumb9_perde-shtori-vertikalni-den-i-nosht-shtora-tip-perde-1.jpg",
-                "category": "Harmony Blinds",
-                "material": "silk",
-                "description": "Harmony blind with a wide variety of colors, vertical single elements",
-                "price": 159,
-                "_createdOn": 1700900780065,
-                "_id": "e645f7bf-35ca-446d-bc70-68c2e0070827"
-            },
-            "3fdc2861-b343-4e22-8729-1e7de07e7e49": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "name": "Aluminium blinds",
-                "productNumber": "A55p",
-                "colors": {
-                    "white": true,
-                    "yellow": true,
-                    "blue": false,
-                    "purple": false,
-                    "pink": true,
-                    "grey": true,
-                    "brown": false,
-                    "beige": true,
-                    "red": false,
-                    "orange": false,
-                    "violet": false
+                "62c9010e-b90f-4ed7-b0cc-8f03cda6ce56": {
+                    "name": "flies",
+                    "brand": "Dafy's Art Studio",
+                    "imageUrl": "https://4.imimg.com/data4/QT/UX/ANDROID-12778050/product-500x500.jpeg",
+                    "description": "Photo frame Butterflies",
+                    "price": "129",
+                    "category": "Photo Frame",
+                    "status": "Available",
+                    "time": "2 Days",
+                    "_id": "62c9010e-b90f-4ed7-b0cc-8f03cda6ce56"
                 },
-                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz6CEG_IbQ6PSUeF-zYD9mHh-Siv68KwMjmw&usqp=CAU",
-                "category": "Aluminium Blinds",
-                "material": "aluminium",
-                "description": "Aluminium blind with a wide variety of colors",
-                "price": "88",
-                "_createdOn": 1700900780067,
-                "_id": "3fdc2861-b343-4e22-8729-1e7de07e7e49"
-            },
-            "f2ad9138-080e-4ce4-ab8a-d0cd2d69d0bf": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "Purpuless",
-                "productNumber": "V55p",
-                "colors": {
-                    "white": true,
-                    "yellow": true,
-                    "blue": true,
-                    "purple": false,
-                    "pink": true,
-                    "grey": true,
-                    "brown": false,
-                    "beige": true,
-                    "red": false,
-                    "orange": false,
-                    "violet": false 
-                },
-                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkQLqDM7kKutE1T4_kuTyHRMn7wLC6R7Q8mA&usqp=CAU",
-                "category": "Vertilal Blinds",
-                "material": "cloth",
-                "description": "Vertical blind with a wide variety of colors, vertical single elements",
-                "price": "90",
-                "_createdOn": 1700900780068,
-                "_id": "f2ad9138-080e-4ce4-ab8a-d0cd2d69d0bf"
-            },
-            "58cba03b-74fa-45d2-9639-b7e4d2b1aa35": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "name": "Harmony",
-                "productNumber": "h55p",
-                "colors": {
-                    "white": false,
-                    "yellow": true,
-                    "blue": false,
-                    "purple": false,
-                    "pink": true,
-                    "grey": true,
-                    "brown": false,
-                    "beige": false,
-                    "red": true,
-                    "orange": true,
-                    "violet": false 
-                },
-                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ-k4JPbaN4ut1Yky6GhxKUBsPC_f_vlaC_A&usqp=CAU",
-                "category": "Harmoniya Blinds",
-                "material": "cotton",
-                "description": "Harmoniya blind with a wide variety of colors, vertical single elements",
-                "price": "150",
-                "_createdOn": 1700900780070,
-                "_id": "58cba03b-74fa-45d2-9639-b7e4d2b1aa35"
-            },
-        },
-        "comments": {
-            "3a9edc2f-4f24-4e50-99d2-62583eef500b": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "blindId": "c92f5e70-8fa5-4c7f-a9df-bf1d254aaa4c",
-                "comment": "This is very smart solution for my home interior",
-                "username": "Peter",
-                "_createdOn": 1700832839485,
-                "_id": "3a9edc2f-4f24-4e50-99d2-62583eef500b"
-            },
-            "b997167a-a57b-4e9b-b96f-3d28886b9397": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "blindId": "41cb9fad-ae1c-4c3d-aa30-d4a3d3c8c5b7",
-                "comment": "Beautiful design",
-                "username": "George",
-                "_createdOn": 1700833099851,
-                "_id": "b997167a-a57b-4e9b-b96f-3d28886b9397"
             }
-        },
-        "likes":{
+            
+        // "comments": {
+        //     "3a9edc2f-4f24-4e50-99d2-62583eef500b": {
+        //         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        //         "blindId": "c92f5e70-8fa5-4c7f-a9df-bf1d254aaa4c",
+        //         "comment": "This is very smart solution for my home interior",
+        //         "username": "Peter",
+        //         "_createdOn": 1700832839485,
+        //         "_id": "3a9edc2f-4f24-4e50-99d2-62583eef500b"
+        //     },
+        //     "b997167a-a57b-4e9b-b96f-3d28886b9397": {
+        //         "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+        //         "blindId": "41cb9fad-ae1c-4c3d-aa30-d4a3d3c8c5b7",
+        //         "comment": "Beautiful design",
+        //         "username": "George",
+        //         "_createdOn": 1700833099851,
+        //         "_id": "b997167a-a57b-4e9b-b96f-3d28886b9397"
+        //     }
+        // },
+        // "likes":{
           
-        },
+        // },
 
     };
     var rules$1 = {

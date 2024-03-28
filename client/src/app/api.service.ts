@@ -13,11 +13,8 @@ export class ApiService {
 
   getProducts(): Observable<Product[]> {
     const { apiUrl } = environment;
-    // console.log(this.http.get(`${apiUrl}/products`));
-
-    // return this.http.get<Product[]>(`${apiUrl}/products`);
-
-    return this.http.get<{ [key: string]: Product }>(`${apiUrl}/products`).pipe(
+  
+    return this.http.get<{ [key: string]: Product }>(`${apiUrl}/data/products`).pipe(
       map(response => {
         return Object.values(response)
       })
@@ -29,7 +26,7 @@ export class ApiService {
 
     const { apiUrl } = environment;
 
-    return this.http.get<Product>(`${apiUrl}/products/${id}`)
+    return this.http.get<Product>(`${apiUrl}/data/products/${id}`)
   }
 
 
@@ -48,6 +45,6 @@ export class ApiService {
     //   time
     // }
 
-    return this.http.post<Product>(`${apiUrl}/products`, payload)
+    return this.http.post<Product>(`${apiUrl}/data/products`, payload)
   }
 }
