@@ -1,20 +1,33 @@
 import { HTTP_INTERCEPTORS, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable, Provider } from "@angular/core";
 import { Observable } from "rxjs";
-import { environment } from "src/environments/environment.development";
 
 
-const { apiUrl } = environment;
+
 @Injectable()
 class AppInterceptor implements HttpInterceptor {
-    API = '/users'
+ 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log(req);
+        console.log('request', req);
 
-        if (req.urlWithParams.startsWith(this.API)) {
+        const accessToken = localStorage.getItem('acessToken');
+
+        console.log('accessToken', accessToken);
+
+        if (req.url.startsWith('http://localhost:3030') && accessToken) {
             req = req.clone({
-                url: req.url.replace(this.API, apiUrl),
-                withCredentials: true,
+             setHeaders :{
+                'X-Autorization': accessToken
+             }
+            })
+            console.log('req', req)
+        }
+
+        if(!req.headers.has('Content-Type')){
+            req = req.clone({
+                setHeaders: {
+                    'Content-Type': 'application/json'
+                }
             })
         }
         return next.handle(req);

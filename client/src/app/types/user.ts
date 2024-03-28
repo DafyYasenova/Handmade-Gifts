@@ -1,13 +1,16 @@
 export interface User {
-    name: string,
+    username: string,
     email: string,
+    _id?: string,
+    password?: string,
+    accessToken?: string;
     
 }
 
-export interface UserForAuth {
-    username: string,
-    email: string;
-    password: string,
-    id: string,
+// export interface UserForAuth {
+//     username: string,
+//     email: string;
+//     password: string,
+//     id: string,
 
-}
+// }
