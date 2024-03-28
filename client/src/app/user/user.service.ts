@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
@@ -9,37 +9,19 @@ import { environment } from 'src/environments/environment.development';
 })
 export class UserService {
 
-
+  private user$$ = new BehaviorSubject<User | undefined>(undefined);
+  private user$ = this.user$$.asObservable();
 
   user: User | undefined;
   USER_KEY = '[user]';
 
-
   get isLogged(): boolean {
     return !!this.user;
   }
-  constructor(private http: HttpClient) {
-
-    try {
-      const lsUser = localStorage.getItem(this.USER_KEY) || '';
-      this.user = JSON.parse(lsUser)
-    } catch (error) {
-      this.user = undefined;
-    }
-  }
+  constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
-    // this.user = {
-    //   username: 'Me',
-    //   email: 'example@abv.bg',
-    //   password: '123123',
-    //   id: '123',
-    // }
-
-    // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
-
-    // return this.http.post<User>(`/users/login`, { email, password });
-
+  
     
       return this.http.post<{ email: string, username: string, _id: string, accessToken: string }>(`${environment.apiUrl}/users/login`, { email, password })
         .pipe(
@@ -49,18 +31,16 @@ export class UserService {
             localStorage.setItem('userId', response._id);
             localStorage.setItem('accessToken', response.accessToken);
   
-            // this.user$$.next({
-            //   email: response.email,
-            //   name: response.username,
-            //   _id: response._id,
-            //   accessToken: response.accessToken
-            // });
-       
+            this.user$$.next({
+              email: response.email,
+              username: response.username,
+              _id: response._id,
+              accessToken: response.accessToken
+            });
   
           })
         );
   
-    
   }
 
 
@@ -95,11 +75,5 @@ export class UserService {
 
   }
 
-
-
-  logout() {
-    this.user = undefined;
-    localStorage.removeItem(this.USER_KEY)
-  }
 }
 
