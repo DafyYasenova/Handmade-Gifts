@@ -8,13 +8,11 @@
 .notification {
     position: fixed;
     z-index: 10;
-    right: 8%;
-    top: 8%;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+    right: 20%;
+    top: 20%;
+    padding: 1em;
+    border-radius: 0.3em;
     color: rgb(255, 255, 255);
-    font-style: italic;
-    text-decoration: underline;
     box-shadow: 0 5px 10px rgb(204, 204, 204);
     background-color: rgba(238, 74, 74, 0.699);
   }
