@@ -14,15 +14,36 @@ export class UserService implements OnDestroy{
 
   user: User | undefined;
   
-  userSubscription: Subscription;
+  private userSubscription: Subscription = new Subscription;
   
   get isLogged(): boolean {
     return !!this.user;
   }
   constructor(private http: HttpClient) {
+
+    this.userFromLocaleStorage();
+   
    this.userSubscription =  this.user$.subscribe((user) =>{
       this.user = user;
     })
+  }
+
+  
+  private userFromLocaleStorage(): void { 
+    const accessToken = localStorage.getItem('accessToken'); 
+    const email = localStorage.getItem('email'); 
+    const username = localStorage.getItem('username'); 
+    const _id = localStorage.getItem('userId'); 
+ 
+
+    if (accessToken && email && username && _id) { 
+   
+      this.user$$.next({ email, username, _id, accessToken }); 
+    
+     
+    }else{ 
+      this.user$$.next(undefined); 
+    } 
   }
 
   login(email: string, password: string) {
@@ -42,6 +63,7 @@ export class UserService implements OnDestroy{
               accessToken: response.accessToken
             });
   
+            console.log('login response', response)
           })
         );
   
@@ -68,7 +90,7 @@ export class UserService implements OnDestroy{
 
       localStorage.setItem('username', response.username);
       localStorage.setItem('email', response.email);
-      localStorage.setItem('_id', response._id)
+      localStorage.setItem('userId', response._id)
       localStorage.setItem('accessToken', response.accessToken);
 
       this.user$$.next({ 
@@ -77,6 +99,7 @@ export class UserService implements OnDestroy{
         _id: response._id, 
         accessToken: response.accessToken 
       }); 
+      console.log('response', response)
 
     }))
 
@@ -93,12 +116,6 @@ logout() {
     })
    )
   }
-
-
-//   getProfile(){
-// return this.http.get<User>('/users/:id').pipe(tap((user)=> this.user$$.next(user)));
-
-//   }
 
   ngOnDestroy(): void {
     this.userSubscription.unsubscribe()
