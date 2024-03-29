@@ -15,7 +15,10 @@ export class AuthenticateComponent implements OnInit {
   ngOnInit(): void {
 
     this.isLoggedIn = this.userService.isLogged;
+    debugger;
+    console.log(this.isLoggedIn)
     if (!this.isLoggedIn) {
+
       this.router.navigate(['/'])
     }
 

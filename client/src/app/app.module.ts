@@ -19,7 +19,6 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
   declarations: [
     AppComponent,
     AuthenticateComponent,
-   
 
   ],
   imports: [

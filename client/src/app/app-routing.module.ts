@@ -4,12 +4,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
-import { ErrorComponent } from './pages/error/error.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { GalleryComponent } from './products/gallery/gallery.component';
 import { DetailsComponent } from './products/details/details.component';
 import { CreateComponent } from './products/create/create.component';
 import { AuthGuard } from './guards/auth.guard';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
 
   { path: '**', redirectTo: '/404' },
-  { path: '404', component: ErrorComponent },
+  { path: '404', component: NotFoundComponent },
 ];
 
 @NgModule({
