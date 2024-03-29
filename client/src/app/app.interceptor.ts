@@ -37,7 +37,7 @@ class AppInterceptor implements HttpInterceptor {
         .pipe(
             catchError((error: HttpErrorResponse) => {
                 this.errorService.setError(error);
-                if(error.status === 401){
+                if(error.status === 401 || error.status === 403 || error.status === 409 ){
                     this.router.navigate(['/login'])
                 } else{
                     this.errorService.setError(error);

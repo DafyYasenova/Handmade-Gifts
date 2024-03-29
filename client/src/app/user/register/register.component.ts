@@ -5,6 +5,7 @@ import { emailValidator } from 'src/app/shared/utils/email-validator';
 import { matchPasswordsValidator } from 'src/app/shared/utils/match-passwords-validator';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { ErrorService } from 'src/app/core/error/error.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private errorService: ErrorService) { }
 
   form = this.fb.group({
 
@@ -39,7 +40,15 @@ export class RegisterComponent {
 
     this.userService.register(username!, email!, password!, rePassword!).subscribe(() => {
       this.router.navigate(['/']);
-    })
-    console.log(this.form.value)
+    },
+      // (error) => {
+
+      //   console.error('Error during registration:', error);
+
+      //   this.errorService.setError(error)
+
+
+      // }
+    )
   }
 }
