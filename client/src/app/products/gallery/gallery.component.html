@@ -11,7 +11,7 @@
                     <img src={{product.imageUrl}}/>
                 </div>
                 <div class="content-card">
-                    <p>{{product.name}}</p>
+                    <p>{{product.name | slice : 15 }}</p>
                    <a *ngIf="isLoggedIn" [routerLink]="['/products', product._id]" ><button>View</button></a>
           
             

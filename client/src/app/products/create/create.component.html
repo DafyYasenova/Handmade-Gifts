@@ -9,7 +9,7 @@
                         <div class="input-container">
                             <label for="name">Product name</label>
                             <input type="text" name="name" id="name" ngModel #inputName="ngModel" required minlength="5"
-                                maxlength="20">
+                                maxlength="40">
                         </div>
                         <ng-container *ngIf="inputName.touched">
                             <div class="error-container">
@@ -17,7 +17,7 @@
                                 <p class="error" *ngIf="inputName?.errors?.['minlength']">Product name must be at least
                                     5 characters!</p>
                                 <p class="error" *ngIf="inputName?.errors?.['maxlength']">Product name must be less than
-                                    20 characters!</p>
+                                    40 characters!</p>
                             </div>
                         </ng-container>
                     </div>
