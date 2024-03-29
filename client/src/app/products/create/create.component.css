@@ -16,7 +16,7 @@
 }
 
 .section-create .container .wrapper {
-    width: 30em;
+    width: 60em;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(1.6em);
@@ -27,6 +27,10 @@
     padding: 2em 1em;
 }
 
+.form-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
 .section-create .container .wrapper h3 {
     font-size: 2em;
     text-align: center;
@@ -43,14 +47,14 @@
 
 .section-create .container .wrapper .input-box .input-container label,
 .select-box label {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.1em;
 }
 
 .section-create .container .wrapper .category .input-container select {
     border: 0;
     height: 3em;
-    width: 91%;
+    width: 100%;
     padding: 0.5em;
     border-radius: 0.4em;
     margin-bottom: 10px;
@@ -59,7 +63,7 @@
 }
 
 .section-create .container .wrapper .input-box input {
-    width: 92%;
+    width: 100%;
     height: 100%;
     background: transparent;
     border: none;
@@ -84,7 +88,7 @@
 }
 
 .section-create .container .wrapper .btn {
-    width: 60%;
+    width: 40%;
     height: 3em;
     background-color: #fff;
     outline: none;
@@ -92,13 +96,16 @@
     border-radius: 0.4em;
     box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    font-weight: 500;
     color: #F05F8C;
+    margin-top: 2em;
 
 }
 
 .section-create .container .wrapper .status {
     padding-bottom: 1em;
+    padding-top: 1.7em;
 }
 
 .section-create .container .wrapper input[type="radio"] {
@@ -121,4 +128,18 @@
     color: rgba(255, 0, 0, 0.804);
     font-size: 0.9em;
     padding-top: 0.5em;
+}
+
+@media(max-width: 880px){
+    .section-create .container .wrapper {
+        width: 30em;
+    }
+    .form-wrapper{
+        flex-direction: column;
+    }   
+    .section-create .container .wrapper .input-box input,
+    .section-create .container .wrapper .category .input-container select{
+        width: 92%;
+    }
+    
 }
