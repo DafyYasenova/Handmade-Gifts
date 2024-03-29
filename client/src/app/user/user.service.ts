@@ -89,6 +89,12 @@ logout() {
    )
   }
 
+
+//   getProfile(){
+// return this.http.get<User>('/users/:id').pipe(tap((user)=> this.user$$.next(user)));
+
+//   }
+
   ngOnDestroy(): void {
     this.userSubscription.unsubscribe()
   }

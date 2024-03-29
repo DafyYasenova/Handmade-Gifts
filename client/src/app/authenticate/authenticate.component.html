@@ -1,1 +1,3 @@
-<ng-content></ng-content>>
+
+<app-loader *ngIf="isLoggedIn" />
+<ng-content *ngIf="!isLoggedIn" />
