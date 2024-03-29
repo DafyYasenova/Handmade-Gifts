@@ -6,11 +6,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ErrorService {
 
-  apiError$$ = new BehaviorSubject(null);
+  private apiError$$ = new BehaviorSubject(null);
+
+  //извикваме обсървъбъл, на който подаваме събджекта
+  public apiError$ = this.apiError$$.asObservable();
 
   constructor() { }
 
-  setError (error: any): void {
+  setError(error: any): void {
     this.apiError$$.next(error);
   }
 }

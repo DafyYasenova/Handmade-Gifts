@@ -10,8 +10,9 @@ import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserModule } from './user/user.module';
 import { ProductsModule } from './products/products.module';
-import { appInterceptorProvider } from './app.interceptor';
+
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { appInterceptorProvider } from './app.interceptor';
 
 
 
