@@ -10,6 +10,7 @@ import { DetailsComponent } from './products/details/details.component';
 import { CreateComponent } from './products/create/create.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ErrorComponent } from './core/error/error.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
 
+  {path: 'error', component: ErrorComponent},
   { path: '**', redirectTo: '/404' },
   { path: '404', component: NotFoundComponent },
 ];
