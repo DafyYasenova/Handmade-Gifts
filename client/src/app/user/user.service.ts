@@ -71,7 +71,12 @@ export class UserService implements OnDestroy{
       localStorage.setItem('_id', response._id)
       localStorage.setItem('accessToken', response.accessToken);
 
-      // console.log(response)
+      this.user$$.next({ 
+        email: response.email, 
+        username: response.username, 
+        _id: response._id, 
+        accessToken: response.accessToken 
+      }); 
 
     }))
 
