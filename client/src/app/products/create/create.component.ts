@@ -37,14 +37,5 @@ export class CreateComponent {
 
 
   }
-  // addProduct(event: Event, name: string, brand: string, imageUrl: string, description: string, price: number, category: string, status: string, time: string) {
-  //   event.preventDefault();
-  //   console.log({ name, brand, imageUrl, description, price, category, status , time});
-
-  //   this.apiService.createProduct(name, brand, imageUrl, description, price, category, status, time).subscribe((data)=> {
-  //   // this.apiService.createProduct(name, brand, imageUrl, description, price, category, status, time).pipe(tap((data) => {
-  //     console.log({ data })
-  //   })
-  //   // )
-  // }
+ 
 }

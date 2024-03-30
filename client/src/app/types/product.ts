@@ -10,5 +10,5 @@ export interface Product {
     status: string,
     time: string,
     _id: string,
-    userId: User,
+    _ownerId?: User,
 }

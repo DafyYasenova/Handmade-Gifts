@@ -10,7 +10,7 @@
                             <div class="input-container">
                                 <label for="name">Product name</label>
                                 <input type="text" name="name" id="name" ngModel #inputName="ngModel" required
-                                    minlength="5" maxlength="40">
+                                    minlength="5" maxlength="50">
                             </div>
                             <ng-container *ngIf="inputName.touched">
                                 <div class="error-container">
@@ -21,7 +21,7 @@
                                         5 characters!</p>
                                     <p class="error" *ngIf="inputName?.errors?.['maxlength']">Product name must be less
                                         than
-                                        40 characters!</p>
+                                        50 characters!</p>
                                 </div>
                             </ng-container>
                         </div>
@@ -30,7 +30,7 @@
                             <div class="input-container">
                                 <label for="brand">Brand</label>
                                 <input type="text" name="brand" id="brand" ngModel #inputBrand="ngModel" required
-                                    minlength="5" maxlength="20">
+                                    minlength="5" maxlength="50">
                             </div>
                             <ng-container *ngIf="inputBrand.touched">
                                 <div class="error-container">
@@ -41,7 +41,7 @@
                                         5 characters!</p>
                                     <p class="error" *ngIf="inputBrand?.errors?.['maxlength']">Brand name must be less
                                         than
-                                        20 characters!</p>
+                                        50 characters!</p>
                                 </div>
                             </ng-container>
                         </div>
@@ -100,7 +100,7 @@
                                     <p class="error" *ngIf="inputTime?.errors?.['required']">Time is required!</p>
                                     <p class="error" *ngIf="inputTime?.errors?.['minlength']">Time must be at least
                                         3 characters!</p>
-                                    <p class="error" *ngIf="inputTime?.errors?.['maxlength']">TTime must be less than
+                                    <p class="error" *ngIf="inputTime?.errors?.['maxlength']">Time must be less than
                                         20 characters!</p>
                                 </div>
                             </ng-container>
