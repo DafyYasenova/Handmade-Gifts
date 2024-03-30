@@ -1,0 +1,21 @@
+.profile .container {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    width: 9em;
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile .container .my-products {
+    margin-top: 2em;
+    color: #F05F8C;
+}
