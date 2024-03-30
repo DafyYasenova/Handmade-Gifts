@@ -1,12 +1,12 @@
 <div class="overlay">
-    <div class="backdrop"></div>
+    <div class="backdrop" (click)="cancel()"></div>
     <div class="modal">
         <h2>Are you sure you want to delete</h2>
-            <h2> product.name ?</h2>
+            <h2> {{product.name}} ?</h2>
         
         <div class="btn">
-            <button type="submit" >Delete</button>
-            <button type="button" >Cancel</button>
+            <button type="submit" (click)="deleteProduct()" >Delete</button>
+            <button type="button" (click)="cancel()">Cancel</button>
         </div>
     </div>
 </div>
