@@ -1,0 +1,145 @@
+.banner-forms {
+
+    background-image: url("/assets/images/banner7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 3em 0;
+}
+
+.section-create .container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.section-create .container .wrapper {
+    width: 60em;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1.6em);
+    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.3);
+    color: #F05F8C;
+    text-align: center;
+    border-radius: 0.4em;
+    padding: 2em 1em;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+.section-create .container .wrapper h3 {
+    font-size: 2em;
+    text-align: center;
+
+}
+
+.section-create .container .wrapper .input-box .input-container {
+    width: 100%;
+    height: 3em;
+    margin: 2em 0;
+    position: relative;
+
+}
+
+.section-create .container .wrapper .input-box .input-container label,
+.select-box label {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.section-create .container .wrapper .category .input-container select {
+    border: 0;
+    height: 3em;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #4F4C57;
+}
+
+.section-create .container .wrapper .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 4px rgb(0, 0, 0, 0.2);
+    border-radius: 0.4em;
+
+    /* color: #fff; */
+    color: #4F4C57;
+    font-size: 1em;
+    padding: 1.6em 2.2em 1.6em 1.6em;
+}
+
+
+.section-create .container .wrapper .input-box i {
+    position: absolute;
+    right: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+
+.section-create .container .wrapper .btn {
+    width: 40%;
+    height: 3em;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 0.4em;
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #F05F8C;
+    margin-top: 2em;
+
+}
+
+.section-create .container .wrapper .status {
+    padding-bottom: 1em;
+    padding-top: 1.7em;
+}
+
+.section-create .container .wrapper input[type="radio"] {
+    transform: scale(1.5);
+}
+
+.section-create .container .wrapper .status input[type="radio"]+label {
+    padding-left: 1em;
+    margin-right: 2em;
+}
+
+.input-row .status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-box .error-container .error {
+    display: block;
+    color: rgba(255, 0, 0, 0.804);
+    font-size: 0.9em;
+    padding-top: 0.5em;
+}
+
+@media(max-width: 880px){
+    .section-create .container .wrapper {
+        width: 30em;
+    }
+    .form-wrapper{
+        flex-direction: column;
+    }   
+    .section-create .container .wrapper .input-box input,
+    .section-create .container .wrapper .category .input-container select{
+        width: 92%;
+    }
+    
+}
