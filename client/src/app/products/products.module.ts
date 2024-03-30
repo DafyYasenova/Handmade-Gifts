@@ -6,6 +6,7 @@ import { CreateComponent } from './create/create.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     GalleryComponent,
     DetailsComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     CommonModule, RouterModule, SharedModule, FormsModule,
@@ -22,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     GalleryComponent,
     DetailsComponent,
     CreateComponent,
+    EditComponent,
   ]
 })
 export class ProductsModule { }
