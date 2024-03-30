@@ -38,17 +38,22 @@ export class RegisterComponent {
     const { username, email, passGroup: { password, rePassword } = {},
     } = this.form.value;
 
-    this.userService.register(username!, email!, password!, rePassword!).subscribe(() => {
-      this.router.navigate(['/']);
-    },
-      // (error) => {
+    this.userService.register(
+      username!.trim(),
+      email!.trim(),
+      password!.trim(),
+      rePassword!.trim())
+      .subscribe(() => {
+        this.router.navigate(['/']);
+      },
+        // (error) => {
 
-      //   console.error('Error during registration:', error);
+        //   console.error('Error during registration:', error);
 
-      //   this.errorService.setError(error)
+        //   this.errorService.setError(error)
 
 
-      // }
-    )
+        // }
+      )
   }
 }
