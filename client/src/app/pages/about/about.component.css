@@ -86,7 +86,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    gap: 2em;
+    gap: 3em;
 }
 .about .container .partners .media {
     overflow: hidden;
@@ -99,6 +99,10 @@
     box-shadow: 0 0 1em 0 rgb(0,0,0,0.2);
 }
 
+.about .container .partners .media:hover {
+    flex: 0 0 18.3%;
+    transition: all 0.4s ease-in;
+}
 .about .container .partners .media:not(:last-child){
     padding: 0.5em;
 
