@@ -24,13 +24,13 @@ export class DeleteComponent implements OnInit {
   } as Product;
 
   constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { }
-ngOnInit(): void {
-  this.apiService.getOneProduct(this.currentId).subscribe((product) => {
-    this.product = product;
- 
+  ngOnInit(): void {
+    this.apiService.getOneProduct(this.currentId).subscribe((product) => {
+      this.product = product;
 
-  })
-}
+
+    })
+  }
 
 
   deleteProduct() {
