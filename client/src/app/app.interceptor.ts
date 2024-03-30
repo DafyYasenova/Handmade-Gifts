@@ -14,12 +14,12 @@ class AppInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
      
 
-        const accessToken = localStorage.getItem('acessToken');
+        const accessToken = localStorage.getItem('accessToken');
 
         if (req.url.startsWith('http://localhost:3030') && accessToken) {
             req = req.clone({
              setHeaders :{
-                'X-Autorization': accessToken
+                'X-Authorization': accessToken
              }
             })
         }
