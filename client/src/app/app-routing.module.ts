@@ -11,6 +11,7 @@ import { CreateComponent } from './products/create/create.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ErrorComponent } from './core/error/error.component';
+import { EditComponent } from './products/edit/edit.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
 
   { path: 'products', component: GalleryComponent },
   { path: 'products/:id', component: DetailsComponent, canActivate: [AuthGuard] },
-  // { path: 'products/:id/edit', component: EditComponent },
+  { path: 'products/:id/edit', component: EditComponent , canActivate: [AuthGuard]},
   { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
 
   { path: 'login', component: LoginComponent },

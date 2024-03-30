@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Product } from 'src/app/types/product';
 
@@ -13,7 +13,9 @@ export class DetailsComponent implements OnInit {
   product = {} as Product;
 
   productId: string = '';
-  constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute) { }
+  userId = localStorage.getItem('userId');
+  productOwnerId: string = ''
+  constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -22,8 +24,13 @@ export class DetailsComponent implements OnInit {
 
     this.apiService.getOneProduct(productId).subscribe((product) => {
       this.product = product;
-      this.productId = product._id
-      console.log('product', productId)
+      this.productId = product._id  as unknown as string;
+      this.productOwnerId = product._ownerId as unknown as string;
+
+      // console.log(this.productOwnerId)
+      // console.log(this.userId)
+      // console.log(this.productOwnerId === this.userId)
+      // console.log('product', productId)
     })
 
   }

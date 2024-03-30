@@ -2,18 +2,20 @@
     <div class="container">
         <div class="details-item">
 
-            
+
             <div class="details-img">
                 <img src="{{product.imageUrl}}" alt={{product.name}}>
             </div>
             <div class="details-content">
                 <div class="action">
-                    <div><button class="like-btn btn"><i
-                                class="fa-solid fa-thumbs-up"></i><span>Like</span></button></div>
-                    <div><button class="edit-btn btn"><i class="fa-solid fa-pencil"></i><span>Edit</span></button>
+                    <div><button class="like-btn btn"><i class="fa-solid fa-thumbs-up"></i><span>Like</span></button>
                     </div>
-                    <div><button class="delete-btn btn"><i
-                                class="fa-solid fa-trash"></i><span>Delete</span></button></div>
+
+                    <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'edit']"><button class="edit-btn btn"><i class="fa-solid fa-pencil"></i><span>Edit</span></button>
+                    </div>
+                    <div><button class="delete-btn btn"><i class="fa-solid fa-trash"></i><span>Delete</span></button>
+                    </div>
+
                     <div><button class="comment-btn btn"><i
                                 class="fa-regular fa-comment-dots"></i><span>Comment</span></button></div>
                     <div><button class="back-btn btn" [routerLink]="['/products']"><i
@@ -22,7 +24,7 @@
                 </div>
                 <div class="content">
                     <h3 class="product-name">
-                       {{product.name}}
+                        {{product.name}}
                     </h3>
                     <h4 class="product-brand"><i class="fa-solid fa-gift"></i>Brand: {{product.brand}}</h4>
                     <p class="category"><i class="fa-solid fa-layer-group"></i>Category: {{product.category}}</p>
@@ -36,4 +38,3 @@
         </div>
     </div>
 </section>
-
