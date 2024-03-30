@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -12,7 +13,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     AboutComponent,
     NotFoundComponent,
-  
+    SearchComponent,
+
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
   exports: [
     HomeComponent,
     AboutComponent,
-   NotFoundComponent,
+    NotFoundComponent,
+    SearchComponent,
   ]
 })
 export class PagesModule { }
