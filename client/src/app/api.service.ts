@@ -42,6 +42,21 @@ export class ApiService {
     const { apiUrl } = environment;
     const payload = product;
 
+    console.log('payload',payload)
     return this.http.put<Product>(`${apiUrl}/data/products/${id}`, payload);
+  }
+
+  deleteProduct(product: Product, id:string){
+    const { apiUrl } = environment;
+    const payload = product;
+
+    return this.http.delete<Product>(`${apiUrl}/data/products/${id}`);
+  }
+
+  searchProduct(){
+
+    // const { apiUrl } = environment;
+    // const payload = product;
+    // return this.http.get<Product>(`${apiUrl}?where=name%20LIKE%20%22${''}%22`);
   }
 }
