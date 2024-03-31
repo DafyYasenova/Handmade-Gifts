@@ -11,4 +11,6 @@ export interface Product {
     time: string,
     _id: string,
     _ownerId?: User,
+    _createdOn?: string,
+    _updatedOn?:string,
 }
