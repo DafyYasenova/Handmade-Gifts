@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
+import { DeleteComponent } from './delete/delete.component';
 
 
 
@@ -15,7 +16,8 @@ import { EditComponent } from './edit/edit.component';
     GalleryComponent,
     DetailsComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     CommonModule, RouterModule, SharedModule, FormsModule,
@@ -25,6 +27,7 @@ import { EditComponent } from './edit/edit.component';
     DetailsComponent,
     CreateComponent,
     EditComponent,
+    DeleteComponent,
   ]
 })
 export class ProductsModule { }
