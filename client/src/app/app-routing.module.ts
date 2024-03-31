@@ -12,7 +12,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ErrorComponent } from './core/error/error.component';
 import { EditComponent } from './products/edit/edit.component';
-import { DeleteComponent } from './products/delete/delete.component';
+
 import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'products', component: GalleryComponent },
   { path: 'products/:id', component: DetailsComponent, canActivate: [AuthGuard] },
   { path: 'products/:id/edit', component: EditComponent , canActivate: [AuthGuard]},
-  { path: 'products/:id/delete', component: DeleteComponent , canActivate: [AuthGuard]},
   { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
 
   { path: 'login', component: LoginComponent },
