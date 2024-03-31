@@ -14,7 +14,7 @@
 
                     <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'edit']"><button class="edit-btn btn"><i class="fa-solid fa-pencil"></i><span>Edit</span></button>
                     </div>
-                    <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'delete']"><button class="delete-btn btn"><i class="fa-solid fa-trash"></i><span>Delete</span></button>
+                    <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId]"><button class="delete-btn btn" (click)="showDeleteModal()"><i class="fa-solid fa-trash"></i><span>Delete</span></button>
                     </div>
 
                     <div *ngIf="userId !== productOwnerId && userId"><button class="comment-btn btn"><i
@@ -36,6 +36,21 @@
                 </div>
 
             </div>
+
+            <div *ngIf="showDeleteConfirmationModal">
+            <div  *ngIf="userId === productOwnerId && userId" class="overlay" >
+                <div class="backdrop" (click)="cancel()"></div>
+                <div class="modal">
+                    <h2>Are you sure you want to delete</h2>
+                        <h2>{{product.name}}?</h2>
+                    
+                    <div class="btn">
+                        <button type="submit" (click)="deleteProduct()" >Delete</button>
+                        <button type="button" (click)="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 </section>
