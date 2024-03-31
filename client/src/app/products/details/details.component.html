@@ -8,17 +8,17 @@
             </div>
             <div class="details-content">
                 <div class="action">
-                    <div><button class="like-btn btn"><i class="fa-solid fa-thumbs-up"></i><span>Like</span></button>
+                    <div *ngIf="userId !== productOwnerId && userId"><button class="like-btn btn"><i class="fa-solid fa-thumbs-up"></i><span>Like</span></button>
                     </div>
 
                     <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'edit']"><button class="edit-btn btn"><i class="fa-solid fa-pencil"></i><span>Edit</span></button>
                     </div>
-                    <div><button class="delete-btn btn"><i class="fa-solid fa-trash"></i><span>Delete</span></button>
+                    <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'delete']"><button class="delete-btn btn"><i class="fa-solid fa-trash"></i><span>Delete</span></button>
                     </div>
 
-                    <div><button class="comment-btn btn"><i
+                    <div *ngIf="userId !== productOwnerId && userId"><button class="comment-btn btn"><i
                                 class="fa-regular fa-comment-dots"></i><span>Comment</span></button></div>
-                    <div><button class="back-btn btn" [routerLink]="['/products']"><i
+                    <div ><button class="back-btn btn" [routerLink]="['/products']"><i
                                 class="fa-solid fa-circle-chevron-left"></i><span>Back</span></button></div>
 
                 </div>

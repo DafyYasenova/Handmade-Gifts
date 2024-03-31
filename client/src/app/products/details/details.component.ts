@@ -27,10 +27,6 @@ export class DetailsComponent implements OnInit {
       this.productId = product._id  as unknown as string;
       this.productOwnerId = product._ownerId as unknown as string;
 
-      // console.log(this.productOwnerId)
-      // console.log(this.userId)
-      // console.log(this.productOwnerId === this.userId)
-      // console.log('product', productId)
     })
 
   }
