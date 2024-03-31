@@ -49,17 +49,20 @@ Published posts are visible to everyone, but only logged in users can access det
 ##  Details:
 This page contains information such as name of the product, brand name, category, status, price, additional information, time for production, photo of the relevant blind.
 
-##  Edit page - Every logged in user can edit their posts.
-##  Delete - Every logged in user can delete their posts.
-##  Create page - Visible only for logged in users.
+##  Edit page:
+Every logged in user can edit their posts.
+##  Delete:
+ Every logged in user can delete their posts.
+##  Create page:
+ Visible only for logged in users.
 
 
 
-##  Technologies
-##  Angular v16
-##  HTML5
-##  CSS3
-##  TypeScrypt
+##  Technologies:
+Angular v16
+HTML5
+CSS3
+TypeScrypt
 
 
 # License

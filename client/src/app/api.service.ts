@@ -21,6 +21,19 @@ export class ApiService {
     )
   }
 
+  getLatestProduct(){
+    const { apiUrl } = environment;
+    return this.http.get(`${apiUrl}/products?sortBy=_createdOn%20desc&offset=0&pageSize=3`).pipe(
+      map(response =>{
+        return Object.values(response)
+      })
+    );
+  }
+  // getMyProducts(userId: string): Observable<Product[]> {
+  //   return this.getProducts().pipe(
+  //     map((products: Product[]) => products.filter(product => product._ownerId === userId))
+  //   );
+  // }
 
   getOneProduct(id: string) {
 

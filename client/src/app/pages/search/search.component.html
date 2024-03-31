@@ -1,1 +1,29 @@
-<p>search works!</p>
+<section class="gallery" id="gallery">
+    <div class="container">
+        <h2>Search</h2>
+        <div>
+           
+        </div>
+
+        <div class="input-container">
+
+            <input type="text" name="name" id="name" required placeholder="Product name" minlength="5" maxlength="50">
+            <button>Search</button>
+        </div>
+        <div class="no-result">
+            <h3>No results found!</h3>
+        </div>
+        <div *ngIf="!isLoading" class="container-cards">
+            <div *ngFor="let product of products"  class="card">
+                <div class="image-card">
+                    <img src="{{product.imageUrl}}" />
+                </div>
+                <div class="content-card">
+                    <p>{{product.name}}</p>
+                    <!-- <a ><button>View</button></a> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -8,6 +8,7 @@ import { SearchComponent } from './search/search.component';
 
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -17,7 +18,8 @@ import { SearchComponent } from './search/search.component';
 
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    
   ],
   exports: [
     HomeComponent,

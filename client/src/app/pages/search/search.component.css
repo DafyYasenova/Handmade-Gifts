@@ -1,0 +1,133 @@
+.gallery .container {
+    padding-top: 3em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+
+.gallery .container h2 {
+    font-size: 2.6em;
+    color: #F05F8C;
+    padding-bottom: 1em;
+}
+
+.gallery .container p {
+    font-size: 1.4em;
+
+}
+
+.gallery .container .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.input-container {
+    padding-bottom: 2em;
+    display: flex;
+    justify-content: center;
+    gap:1em;
+}
+.input-container input{
+    padding: 1em 5em;
+    border-radius: 0.3em;
+    border-color: #F05F8C;
+}
+.input-container button {
+    background-color: #F05F8C;
+    border-radius: 0.3em;
+    padding: 1em;
+    color:#fff;
+    border-color: #F05F8C;
+}
+.gallery .container .container-cards .card {
+    box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+    width: 15em;
+  
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+
+
+}
+
+.gallery .container .container-cards .card .image-card {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+}
+.gallery .container .container-cards .card .image-card img {
+
+    width: 15em;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+
+}
+
+.gallery .container .container-cards .card:hover {
+   transform: scale(1.02);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+}
+
+.gallery .container .container-cards .card .content-card {
+    display: flex;
+    align-self: flex-end;
+ 
+
+}
+
+.gallery .container .container-cards .card .content-card p {
+    padding-right: 1em;
+}
+
+.gallery .container .container-cards .card button {
+    background-color: #fff;
+    color: #F05F8C;
+    padding: 0.3em 0.5em;
+    outline: none;
+    border: none;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.gallery .container .container-cards .card button:hover {
+
+    background-color: #F05F8C;
+    color: #fff;
+    transition: all 0.6s ease;
+
+}
+
+@media (max-width: 992px) {
+    .gallery .container .container-cards .card {
+        width: calc(50% - 2em);
+    }
+
+    .gallery .container .container-cards .card:hover {
+        width: calc(50% - 1em);
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery .container .container-cards .card {
+        width: calc(100% - 2em);
+    }
+
+    .gallery .container .container-cards .card:hover {
+        width: calc(100% - 1em);
+    }
+}
+
+
+
