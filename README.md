@@ -1,25 +1,25 @@
-# Handmade-Gifts
+## Handmade-Gifts
 Angular project 
 
 
 
-Overview:
+## Overview:
+Handmade Gifts is an Angular app built for sharing handmade products. It was developed for handmade brands that want their products to reach more people.
 
-
-Installation and Getting Started
+## Installation and Getting Started
 To set up the project:
 
 Clone the repository: https://github.com/DafyYasenova/Handmade-Gifts.git
 
 Navigate to the project folder.
 
-Client side:
+# Client side:
 
 navigate to client folder: cd client
 ng serve
 
 
-Server side: use practice server SoftUni, having initialized ready posts.
+# Server side: use practice server SoftUni, having initialized ready posts.
 
 There are registered users with email and password:
 
@@ -33,37 +33,34 @@ Install all dependencies using: npm install
 Start server: node server.js
 Run the project and enjoy!
 
-Features:
-Authentication:
+## Features:
+# Authentication:
 Done by registering and logging in to the system
 
-Home page:
+# Home page:
 Visible to everyone logged into the app.
 
-About page:
+# About page:
 Shows some background and information about the products. The page is visible to everyone logged into the app.
 
-
-Catalog:
+# Catalog:
 Published posts are visible to everyone, but only logged in users can access detailed information about each post. Not logged in users are redirected to the home page.
 
-Details:
+# Details:
 This page contains information such as name of the product, brand name, category, status, price, additional information, time for production, photo of the relevant blind.
 
-
-Edit page - every logged in user can edit their posts.
-Delete - every logged in user can delete their posts.
-Create page:
-Visible only for logged in users.
+# Edit page - Every logged in user can edit their posts.
+# Delete - Every logged in user can delete their posts.
+# Create page - Visible only for logged in users.
 
 
 
-Technologies
-Angular v16
-HTML5
-CSS3
-TypeScrypt
+## Technologies
+# Angular v16
+# HTML5
+# CSS3
+# TypeScrypt
 
 
-License
+## License
 This project is licensed under the MIT License.
