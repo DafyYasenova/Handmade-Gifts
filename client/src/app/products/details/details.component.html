@@ -8,7 +8,8 @@
             </div>
             <div class="details-content">
                 <div class="action">
-                    <div *ngIf="userId !== productOwnerId && userId"><button class="like-btn btn"><i class="fa-solid fa-thumbs-up"></i><span>Like</span></button>
+                    <div *ngIf="userId !== productOwnerId && userId"><button class="like-btn btn" (click)="toggleLike()"> <i [class]="liked ? 'fa-solid fa-heart' : 'fa-solid fa-thumbs-up'"></i>
+                        <span>{{ liked ? 'Unlike' : 'Like' }}</span></button>
                     </div>
 
                     <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'edit']"><button class="edit-btn btn"><i class="fa-solid fa-pencil"></i><span>Edit</span></button>

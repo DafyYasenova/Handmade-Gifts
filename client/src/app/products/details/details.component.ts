@@ -10,11 +10,12 @@ import { Product } from 'src/app/types/product';
 })
 export class DetailsComponent implements OnInit {
 
+  liked: boolean = false;
   product = {} as Product;
 
   productId: string = '';
   userId = localStorage.getItem('userId');
-  productOwnerId: string = ''
+  productOwnerId: string = '';
   constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -24,10 +25,14 @@ export class DetailsComponent implements OnInit {
 
     this.apiService.getOneProduct(productId).subscribe((product) => {
       this.product = product;
-      this.productId = product._id  as unknown as string;
+      this.productId = product._id as unknown as string;
       this.productOwnerId = product._ownerId as unknown as string;
 
+      
     })
-
   }
-}
+    toggleLike():void {
+      this.liked = !this.liked;
+    }
+  }
+
