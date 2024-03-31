@@ -10,29 +10,73 @@ import { Product } from 'src/app/types/product';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
-export class EditComponent implements OnInit{
-currentId:string = '';
-product = {} as Product;
+export class EditComponent implements OnInit {
+
+  isOwner: boolean = false;
+  currentId: string = '';
+  originalProduct: Product = {
+    name: '',
+    brand: '',
+    imageUrl: '',
+    description: '',
+    time: '',
+    price: 0,
+    category: '',
+    status: '',
+    _id: '',
+    _createdOn: '',
+    _updatedOn: '',
+  };
+  productId: string = '';
+  userId = localStorage.getItem('userId');
+  productOwnerId: string = '';
+
+  product: Product = { ...this.originalProduct };
   imageUrlPattern = IMAGE_URL_PATTERN;
-  constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { };
+
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.currentId = this.route.snapshot.params['id'];
-    console.log(this.currentId)
-    this.apiService.getOneProduct(this.currentId).subscribe((product) =>{
-      this.product = product;
-    })
-  }
-  editProduct(form: NgForm) {
 
+    this.apiService.getOneProduct(this.currentId).subscribe((product) => {
+      this.originalProduct = product;
+      this.product = { ...this.originalProduct };
+  
+      this.product = product;
+      this.productId = product._id as unknown as string;
+      this.productOwnerId = product._ownerId as unknown as string;
+      
+
+      if (this.userId === this.productOwnerId) {
+        this.isOwner = true;
+      }
+    });
+  }
+  
+
+  editProduct(form: NgForm): void {
     if (form.invalid) {
       return;
     }
 
-    this.apiService.editProduct(this.product, this.currentId).subscribe((data) =>{
-      console.log('Product edited successfully:', data);
-      this.router.navigate([`/products/${this.currentId}`])
-    })
+    // Актуализира this.product с новите стойности от формата
+    const updatedProduct = {
+      ...this.product,
+      // Това ще присвои новите стойности от формата върху this.product  
+      ...form.value
+    };
+    if (this.isOwner) {
+      this.apiService.editProduct(updatedProduct, this.currentId).subscribe({
+        next: (product) => {
+          console.log('Product edited successfully:', product); this.router.navigate(['/products', this.currentId]);
+        }, error: (error) => {
+          console.error('Error editing product:', error);
+        }
+      });
+    }
   }
- 
 }
+
+
+
