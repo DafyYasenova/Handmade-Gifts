@@ -1,4 +1,4 @@
-<section class="banner-forms">
+<section class="banner-forms" *ngIf="isOwner">
     <section class="section-create">
         <div class="container">
             <form #form="ngForm" (ngSubmit)="editProduct(form)">

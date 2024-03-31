@@ -50,6 +50,8 @@ export class EditComponent implements OnInit {
 
       if (this.userId === this.productOwnerId) {
         this.isOwner = true;
+      } else{
+        this.router.navigate(['/404'])
       }
     });
   }
@@ -74,7 +76,10 @@ export class EditComponent implements OnInit {
           console.error('Error editing product:', error);
         }
       });
+    }else{
+      this.router.navigate(['/products'])
     }
+
   }
 }
 
