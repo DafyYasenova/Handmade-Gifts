@@ -15,6 +15,8 @@ export class ProfileComponent implements OnInit{
   http: any;
   products: Product[] | null = null;
  userId = localStorage.getItem('userId');
+ username = localStorage.getItem('username');
+ email = localStorage.getItem('email');
  isLoading: boolean = true;
  
  constructor(private apiService: ApiService,private userService: UserService ){}

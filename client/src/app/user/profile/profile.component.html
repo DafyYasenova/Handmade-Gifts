@@ -4,18 +4,20 @@
         <div class="profile-card">
             <img src="/assets/images/avatar.jpg" alt="logo">
             <div class="info">
-                <h2>Profile name</h2>
-                <p> Email: example&#64;gmail.com</p>
+                <h2>{{username}}</h2>
+                <p> Email: {{email}}</p>
             </div>
         </div>
         <div *ngIf="!isLoading" class="my-products">
-            <h2>My products</h2>
-            <div class="media-container" *ngFor="let product of products">
-                <div class="media">
+            <div class="media-container" *ngIf="products && products.length > 0; else noProducts"> 
+                <h2>My products</h2>
+                <div class="media" *ngFor="let product of products">
                     <img src={{product.imageUrl}} alt="my-products">
                 </div>
-                
             </div>
+            <ng-template #noProducts>
+                <h2>You have no products created yet...</h2>
+            </ng-template>
         </div>
     </div>
 </section>
