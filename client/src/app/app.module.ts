@@ -7,12 +7,12 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UserModule } from './user/user.module';
 import { ProductsModule } from './products/products.module';
 
 import { AuthenticateComponent } from './authenticate/authenticate.component';
-import { appInterceptorProvider } from './app.interceptor';
+import { AppInterceptor } from './app.interceptor';
 
 
 
@@ -25,16 +25,20 @@ import { appInterceptorProvider } from './app.interceptor';
   imports: [
     BrowserModule,
     CoreModule,
-    SharedModule, 
+    SharedModule,
     PagesModule,
     HttpClientModule,
     UserModule,
     ProductsModule,
     AppRoutingModule,
-    
-    
+
+
   ],
-  providers: [appInterceptorProvider],
+  providers: [{
+    useClass: AppInterceptor,
+    multi: true,
+    provide: HTTP_INTERCEPTORS
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

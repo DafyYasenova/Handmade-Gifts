@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 
 
 @Injectable()
-class AppInterceptor implements HttpInterceptor {
+ export class AppInterceptor implements HttpInterceptor {
  
     constructor(private errorService: ErrorService, private router: Router){}
 
@@ -49,10 +49,4 @@ class AppInterceptor implements HttpInterceptor {
         );
 
     }
-}
-
-export const appInterceptorProvider: Provider = {
-    useClass: AppInterceptor,
-    multi: true,
-    provide: HTTP_INTERCEPTORS,
 }
