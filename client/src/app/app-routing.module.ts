@@ -15,6 +15,7 @@ import { EditComponent } from './products/edit/edit.component';
 
 import { SearchComponent } from './pages/search/search.component';
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'about', component: AboutComponent },
@@ -26,9 +27,9 @@ const routes: Routes = [
   { path: 'products/:id/edit', component: EditComponent , canActivate: [AuthGuard]},
   { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
 
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'profile', component: ProfileComponent, },
 
   {path: 'error', component: ErrorComponent},
   { path: '**', redirectTo: '/404' },

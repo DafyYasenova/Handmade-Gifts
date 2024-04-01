@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { EMAIL_DOMAINS } from 'src/app/constants';
 import { emailValidator } from 'src/app/shared/utils/email-validator';
@@ -12,10 +12,18 @@ import { ErrorService } from 'src/app/core/error/error.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private errorService: ErrorService) { }
-
+  
+  ngOnInit(): void {
+    const userId = localStorage.getItem('userId');
+    if (userId) {
+  
+      this.router.navigate(['/'])
+    
+    }
+  }
   form = this.fb.group({
 
     username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
@@ -38,11 +46,16 @@ export class RegisterComponent {
     const { username, email, passGroup: { password, rePassword } = {},
     } = this.form.value;
 
+    const trimmedUsername = username!.trim();
+    const trimmedEmail = email!.trim();
+    const trimmedPassword = password!.trim();
+    const trimmedRePassword = rePassword!.trim();
+
     this.userService.register(
-      username!.trim(),
-      email!.trim(),
-      password!.trim(),
-      rePassword!.trim())
+      trimmedUsername!,
+      trimmedEmail!,
+      trimmedPassword!,
+      trimmedRePassword!)
       .subscribe(() => {
         this.router.navigate(['/']);
       },

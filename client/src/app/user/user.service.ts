@@ -16,9 +16,12 @@ export class UserService implements OnDestroy{
   
   private userSubscription: Subscription = new Subscription;
   
+  
   get isLogged(): boolean {
+    // console.log(this.user)
     return !!this.user;
   }
+
   constructor(private http: HttpClient) {
 
     this.userFromLocaleStorage();
