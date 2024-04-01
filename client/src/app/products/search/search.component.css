@@ -1,3 +1,13 @@
+.banner-forms {
+
+    background-image: url("/assets/images/search 2.jpg");
+    background-repeat: no-repeat;
+
+    background-position: center;
+    background-size: contain;
+    padding: 3em 0;
+}
+
 .gallery .container {
     padding-top: 3em;
     text-align: center;
@@ -24,33 +34,43 @@
     gap: 2em;
 }
 
-.input-container {
+.input-container form {
     padding-bottom: 2em;
     display: flex;
     justify-content: center;
-    gap:1em;
+    gap: 1em;
 }
-.input-container input{
+
+.input-container input {
     padding: 1em 5em;
     border-radius: 0.3em;
     border-color: #F05F8C;
 }
+
+.input-container input:hover {
+    box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.4);
+}
+
 .input-container button {
     background-color: #F05F8C;
     border-radius: 0.3em;
-    padding: 1em;
-    color:#fff;
+    padding: 1em 2em;
+    color: #fff;
     border-color: #F05F8C;
 }
 
+.input-container button:hover {
+    box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
 
 .gallery .container .container-cards .cards-items {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap:2em;
-    
+    gap: 2em;
+
 }
 
 .my-products {
@@ -77,8 +97,9 @@
 .gallery .container .container-cards .card .image-card {
     position: relative;
     width: 100%;
-    height: 100%; 
+    height: 100%;
 }
+
 .gallery .container .container-cards .card .image-card img {
 
     width: 20em;
@@ -88,7 +109,7 @@
 }
 
 .gallery .container .container-cards .card:hover {
-   transform: scale(1.02);
+    transform: scale(1.02);
     transition: all 0.3s ease;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
 }
@@ -96,7 +117,7 @@
 .gallery .container .container-cards .card .content-card {
     display: flex;
     align-self: flex-end;
- 
+
 
 }
 
@@ -124,15 +145,6 @@
 
 }
 
-/* @media (max-width: 992px) {
-    .profile .container .container-cards .card {
-        width: calc(50% - 2em);
-    }
-
-    .profile .container .container-cards .card:hover {
-        width: calc(50% - 1em);
-    }
-}  */
 
 @media (max-width: 576px) {
     .gallery .container .container-cards .card {
@@ -143,4 +155,3 @@
         width: calc(100% - 1em);
     }
 }
-
