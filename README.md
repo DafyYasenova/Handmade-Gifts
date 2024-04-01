@@ -56,7 +56,11 @@ Every logged in user can edit their posts.
 ##  Create page:
  Visible only for logged in users.
 
+## Search page:
+Accessible page only for logged in user. In it you can search for a specific product by name.
 
+## Profile page:
+Every registered and logged in user has access to his profile page, which contains information about the user himself, as well as all the posts created by him.
 
 ##  Technologies:
 Angular v16
