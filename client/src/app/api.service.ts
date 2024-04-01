@@ -11,6 +11,8 @@ import { Observable, map } from 'rxjs';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
+ 
+  userId= localStorage.getItem('userId');
 
   getProducts(): Observable<Product[]> {
     const { apiUrl } = environment;
@@ -22,24 +24,7 @@ export class ApiService {
     )
   }
 
-  getLatestProduct(){
-    // const { apiUrl } = environment;
-    // return this.http.get(`${apiUrl}/products?sortBy=_createdOn%20desc&offset=0&pageSize=3`).pipe(
-    //   map(response =>{
-    //     return Object.values(response)
-    //   })
-    // );
-  }
-  userId= localStorage.getItem('userId')
-  getMyProducts(userId: string): Observable<Product[]> {
-    const { apiUrl } = environment;
-    return this.http.get<{ [key: string]: Product }>(`${apiUrl}/data/products?where=_ownerId%3D%22${userId}%22`).pipe(
-      map(response => {
-        return Object.values(response)
-      })
-    )
-  }
-  
+
   getOneProduct(id: string) {
 
     const { apiUrl } = environment;
@@ -52,9 +37,9 @@ export class ApiService {
     const { apiUrl } = environment;
     const payload = product;
   
-
     return this.http.post<Product>(`${apiUrl}/data/products`, payload)
   }
+
 
   editProduct(product: Product, id:string){
     const { apiUrl } = environment;
@@ -64,6 +49,7 @@ export class ApiService {
     return this.http.put<Product>(`${apiUrl}/data/products/${id}`, payload);
   }
 
+
   deleteProduct(product: Product, id:string){
     const { apiUrl } = environment;
     const payload = product;
@@ -71,10 +57,28 @@ export class ApiService {
     return this.http.delete<Product>(`${apiUrl}/data/products/${id}`);
   }
 
-  searchProduct(){
 
+  getLatestProduct(){
     // const { apiUrl } = environment;
-    // const payload = product;
-    // return this.http.get<Product>(`${apiUrl}?where=name%20LIKE%20%22${''}%22`);
+    // return this.http.get(`${apiUrl}/products?sortBy=_createdOn%20desc&offset=0&pageSize=3`).pipe(
+    //   map(response =>{
+    //     return Object.values(response)
+    //   })
+    // );
+  }
+  getMyProducts(userId: string): Observable<Product[]> {
+    const { apiUrl } = environment;
+    return this.http.get<{ [key: string]: Product }>(`${apiUrl}/data/products?where=_ownerId%3D%22${userId}%22`).pipe(
+      map(response => {
+        return Object.values(response)
+      })
+    )
+  }
+  
+  searchProduct(search: string){
+  
+    const { apiUrl } = environment;
+   
+    return this.http.get<Product>(`${apiUrl}/data/products?where=name%20LIKE%20%22${search}%22`);
   }
 }

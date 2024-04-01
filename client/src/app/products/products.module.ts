@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -17,6 +18,7 @@ import { EditComponent } from './edit/edit.component';
     DetailsComponent,
     CreateComponent,
     EditComponent,
+    SearchComponent,
  
   ],
   imports: [
@@ -27,6 +29,7 @@ import { EditComponent } from './edit/edit.component';
     DetailsComponent,
     CreateComponent,
     EditComponent,
+    SearchComponent,
    
   ]
 })

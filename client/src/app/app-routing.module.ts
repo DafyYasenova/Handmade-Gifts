@@ -13,7 +13,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ErrorComponent } from './core/error/error.component';
 import { EditComponent } from './products/edit/edit.component';
 
-import { SearchComponent } from './pages/search/search.component';
+import { SearchComponent } from './products/search/search.component';
 
 
 const routes: Routes = [
