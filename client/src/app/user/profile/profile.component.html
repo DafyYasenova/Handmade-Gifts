@@ -1,18 +1,24 @@
 <section class="profile">
     <div class="container">
-    
+
         <div class="profile-card">
             <img src="/assets/images/avatar.jpg" alt="logo">
             <div class="info">
                 <h2>{{username}}</h2>
-                <p> Email: {{email}}</p>
+                <h4> Email: {{email}}</h4>
             </div>
         </div>
-        <div *ngIf="!isLoading" class="my-products">
-            <div class="media-container" *ngIf="products && products.length > 0; else noProducts"> 
-                <h2>My products</h2>
-                <div class="media" *ngFor="let product of products">
-                    <img src={{product.imageUrl}} alt="my-products">
+        <div *ngIf="!isLoading" class="container-cards">
+            <h2 class="my-products">My products</h2>
+            <div *ngIf="products && products.length > 0; else noProducts" class="cards-items">
+                <div class="card" *ngFor="let product of products">
+                    <div class="image-card">
+                        <img src={{product.imageUrl}} alt="my-products">
+                    </div>
+                    <div class="content-card">
+                        <p>{{product.name | slice : 15 }}</p>
+                       <a *ngIf="isLoggedIn" [routerLink]="['/products', product._id]" ><button>View</button></a>
+                    </div>
                 </div>
             </div>
             <ng-template #noProducts>

@@ -4,24 +4,124 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2em 0;
 }
 
 .profile-card {
-    width: 9em;
+    width:  9em;
     display: flex;
-    gap: 2em;
+    gap: 4em;
     justify-content: center;
     align-items: center;
 }
+
+.profile-card h2, h4 {
+    color: #4F4C57;
+}
+
 .profile-card img {
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0 0 1em 0 rgb(0,0,0,0.2);
- 
 }
 
+.profile .container .container-cards .cards-items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap:2em;
+    
+}
 
-.profile .container .my-products {
-    margin-top: 2em;
+.my-products {
+    margin: 2em 0;
     color: #F05F8C;
+    text-align: center;
 }
+
+.profile .container .container-cards .card {
+    box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    width: 20em;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+
+
+}
+
+.profile .container .container-cards .card .image-card {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+}
+.profile .container .container-cards .card .image-card img {
+
+    width: 20em;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+
+}
+
+.profile .container .container-cards .card:hover {
+   transform: scale(1.02);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+}
+
+.profile .container .container-cards .card .content-card {
+    display: flex;
+    align-self: flex-end;
+ 
+
+}
+
+.profile .container .container-cards .card .content-card p {
+    padding-right: 1em;
+}
+
+.profile .container .container-cards .card button {
+    background-color: #fff;
+    color: #F05F8C;
+    padding: 0.3em 0.5em;
+    outline: none;
+    border: none;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.profile .container .container-cards .card button:hover {
+
+    background-color: #F05F8C;
+    color: #fff;
+    transition: all 0.6s ease;
+
+}
+
+@media (max-width: 992px) {
+    .profile .container .container-cards .card {
+        width: calc(50% - 2em);
+    }
+
+    .profile .container .container-cards .card:hover {
+        width: calc(50% - 1em);
+    }
+} 
+
+@media (max-width: 576px) {
+    .profile .container .container-cards .card {
+        width: calc(100% - 2em);
+    }
+
+    .profile .container .container-cards .card:hover {
+        width: calc(100% - 1em);
+    }
+}
+
