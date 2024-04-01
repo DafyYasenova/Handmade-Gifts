@@ -19,13 +19,13 @@ import { SearchComponent } from './products/search/search.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'search', component: SearchComponent },
-
-
+  
+  
   { path: 'products', component: GalleryComponent },
   { path: 'products/:id', component: DetailsComponent, canActivate: [AuthGuard] },
   { path: 'products/:id/edit', component: EditComponent , canActivate: [AuthGuard]},
   { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard]},
 
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
