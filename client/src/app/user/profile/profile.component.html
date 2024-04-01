@@ -8,11 +8,11 @@
                 <p> Email: example&#64;gmail.com</p>
             </div>
         </div>
-        <div class="my-products">
+        <div *ngIf="!isLoading" class="my-products">
             <h2>My products</h2>
-            <div class="media-container">
+            <div class="media-container" *ngFor="let product of products">
                 <div class="media">
-                    <img src="" alt="">
+                    <img src={{product.imageUrl}} alt="my-products">
                 </div>
                 
             </div>

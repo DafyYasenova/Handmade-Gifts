@@ -1,30 +1,35 @@
-import { Component } from '@angular/core';
-import { Observable, map } from 'rxjs';
+
+import { Component, OnInit } from '@angular/core';
+
+import { ApiService } from 'src/app/api.service';
 import { Product } from 'src/app/types/product';
-import { environment } from 'src/environments/environment.development';
+
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit{
   http: any;
+  products: Product[] | null = null;
+ userId = localStorage.getItem('userId');
+ isLoading: boolean = true;
+ 
+ constructor(private apiService: ApiService,private userService: UserService ){}
 
-  userId = localStorage.getItem('userId');
-  
-  getMyProducts(userId: string): Observable<Product[]> {
-    // userId = localStorage.getItem('userId')
-       const { apiUrl } = environment;
-       
-       return this.http.getProducts(`${apiUrl}/data/products`).pipe(
-         map(response => {
-           
-          console.log(response)
-          //  const myProducts = Object.values(response).filter(product => product._ownerId === userId);
-          //  return myProducts;
-         })
-         );
-       
-   }
+ get isLoggedIn(): boolean {
+  return this.userService.isLogged;
+}
+ ngOnInit(): void {
+  if (this.userId) {
+    this.apiService.getMyProducts(this.userId).subscribe((products) => {
+    console.log(products)
+    this.products = products;
+    });
+    this.isLoading = false;
+  }
+}
+ 
 }

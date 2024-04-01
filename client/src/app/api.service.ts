@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.development';
 import { Product } from './types/product';
 import { Observable, map } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,12 +30,16 @@ export class ApiService {
     //   })
     // );
   }
-  // getMyProducts(userId: string): Observable<Product[]> {
-  //   return this.getProducts().pipe(
-  //     map((products: Product[]) => products.filter(product => product._ownerId === userId))
-  //   );
-  // }
-
+  userId= localStorage.getItem('userId')
+  getMyProducts(userId: string): Observable<Product[]> {
+    const { apiUrl } = environment;
+    return this.http.get<{ [key: string]: Product }>(`${apiUrl}/data/products?where=_ownerId%3D%22${userId}%22`).pipe(
+      map(response => {
+        return Object.values(response)
+      })
+    )
+  }
+  
   getOneProduct(id: string) {
 
     const { apiUrl } = environment;
