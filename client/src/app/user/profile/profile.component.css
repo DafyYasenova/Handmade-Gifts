@@ -17,9 +17,11 @@
 
 .profile-card h2, h4 {
     color: #4F4C57;
+  
 }
 
 .profile-card img {
+    height: 9em;
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0 0 1em 0 rgb(0,0,0,0.2);
