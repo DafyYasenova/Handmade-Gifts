@@ -15,7 +15,7 @@ import { ErrorService } from 'src/app/core/error/error.service';
 export class RegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private errorService: ErrorService) { }
-  
+  errorMsg = '';
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');
     if (userId) {
@@ -56,17 +56,21 @@ export class RegisterComponent implements OnInit {
       trimmedEmail!,
       trimmedPassword!,
       trimmedRePassword!)
-      .subscribe(() => {
+      .subscribe({
+        next: () => {
         this.router.navigate(['/']);
       },
-        // (error) => {
+        error: (error)=> {
 
-        //   console.error('Error during registration:', error);
+          
+          console.error('Error during registration:', error);
+          this.errorMsg = error.error.message;
+          console.log(this.errorMsg)
+          // this.errorService.setError(this.errorMsg)
 
-        //   this.errorService.setError(error)
 
-
-        // }
-      )
+        },
+      
+      })
   }
 }
