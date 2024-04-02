@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/api.service';
 import { Product } from 'src/app/types/product';
 
 import { UserService } from '../user.service';
+import { catchError, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -27,14 +28,24 @@ export class ProfileComponent implements OnInit {
     return this.userService.isLogged;
   }
   
+
   ngOnInit(): void {
     if (this.userId) {
-      this.apiService.getMyProducts(this.userId).subscribe((products) => {
-        console.log(products)
-        this.products = products;
-      });
-      this.isLoading = false;
+      this.apiService.getMyProducts(this.userId)
+        .pipe(
+          tap(products => {
+            console.log(products);
+            this.products = products;
+            this.isLoading = false;
+          }),
+          catchError(error => {
+            console.error('Error retrieving products:', error);
+            // Връщате празен масив за продължаване на потока
+            this.isLoading = false; 
+            return of([]); // Връщате валидна стойност за продължаване на потока
+          })
+        )
+        .subscribe();
     }
   }
-
 }

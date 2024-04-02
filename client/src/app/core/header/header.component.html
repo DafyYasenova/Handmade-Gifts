@@ -11,7 +11,6 @@
                     <li><a routerLink="/">Home</a></li>
                     <li><a routerLink="/about">About</a></li>
                     <li><a routerLink="/products">Gallery</a></li>
-                    <li><a routerLink="/search">Search</a></li>
                 </ul>
             </div>
             <div>
@@ -22,7 +21,8 @@
                     </ul>
                 </div>
                 <div *ngIf="isLoggedIn">
-                <ul >
+                    <ul >
+                    <li><a routerLink="/search">Search</a></li>
                     <li><a routerLink="/create">Create</a></li>
                     <li><a routerLink="/profile">{{ username }}'s Profile</a></li>
                     <li ><a (click)="logout()">Logout</a></li>
