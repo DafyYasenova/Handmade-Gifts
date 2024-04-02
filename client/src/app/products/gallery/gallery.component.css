@@ -6,11 +6,17 @@
     margin-bottom: 3em;
 }
 
+.gallery .container h2, h3 {
+    color: #F05F8C;
+    padding-bottom: 1em;
+}
 
 .gallery .container h2 {
     font-size: 2.6em;
-    color: #F05F8C;
-    padding-bottom: 1em;
+}
+
+.gallery .container h3 {
+    font-size: 2em;
 }
 
 .gallery .container p {
