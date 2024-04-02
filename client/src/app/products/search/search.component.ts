@@ -15,6 +15,7 @@ export class SearchComponent implements OnDestroy {
 
   products: Product[] | null = null;
   isLoading: boolean = true;
+  isSearching: boolean = false;
 
   private searchSubscription: Subscription | undefined;
 
@@ -34,6 +35,7 @@ export class SearchComponent implements OnDestroy {
   onSearch(form: NgForm) {
     const { search } = form.value;
     this.isLoading = true;
+    this.isSearching = true;
     console.log(search);
 
     this.searchSubscription = this.api.searchProduct(search).subscribe((products: Product | Product[]) => {
@@ -43,6 +45,7 @@ export class SearchComponent implements OnDestroy {
         this.products = [products];
       }
       this.isLoading = false;
+      this.isSearching = false;
     });
   }
 

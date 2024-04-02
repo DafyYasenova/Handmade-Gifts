@@ -1,35 +1,38 @@
 <section class="banner-forms">
-<section class="gallery" id="gallery">
-    <div class="container">
-        <h2>Search</h2>
-        <div>
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Search</h2>
+            <div>
 
-        </div>
+            </div>
 
-        <div class="input-container">
-            <form #form="ngForm" (submit)="onSearch(form)">
-                <input type="text" name="search" ngModel #search="ngModel" required placeholder="Product name" minlength="3"
-                    maxlength="50">
-                <button>Search</button>
-            </form>
-        </div>
-        <div *ngIf="!isLoading" class="container-cards">
-            
-            <div *ngIf="products && products.length > 0; else noProducts" class="cards-items">
-                <div class="card" *ngFor="let product of products">
-                    <div class="image-card">
-                        <img src={{product.imageUrl}} alt="my-products">
-                    </div>
-                    <div class="content-card">
-                        <p>{{product.name | slice : 15 }}</p>
-                       <a *ngIf="isLoggedIn" [routerLink]="['/products', product._id]" ><button>View</button></a>
+            <div class="input-container">
+                <form #form="ngForm" (submit)="onSearch(form)">
+                    <input type="text" name="search" ngModel #search="ngModel" required placeholder="Product name"
+                        minlength="3" maxlength="50">
+                    <button>Search</button>
+                </form>
+            </div>
+            <div *ngIf="isSearching">
+                <app-loader />
+            </div>
+            <div *ngIf="!isLoading" class="container-cards">
+
+                <div *ngIf="products && products.length > 0; else noProducts" class="cards-items">
+                    <div class="card" *ngFor="let product of products">
+                        <div class="image-card">
+                            <img src={{product.imageUrl}} alt="my-products">
+                        </div>
+                        <div class="content-card">
+                            <p>{{product.name | slice : 15 }}</p>
+                            <a *ngIf="isLoggedIn" [routerLink]="['/products', product._id]"><button>View</button></a>
+                        </div>
                     </div>
                 </div>
+                <ng-template #noProducts>
+                    <h2>You have no products created yet...</h2>
+                </ng-template>
             </div>
-            <ng-template #noProducts>
-                <h2>You have no products created yet...</h2>
-            </ng-template>
         </div>
-    </div>
-</section>
+    </section>
 </section>
