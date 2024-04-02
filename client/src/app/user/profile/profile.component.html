@@ -8,6 +8,9 @@
                 <h4> Email: {{email}}</h4>
             </div>
         </div>
+        <div *ngIf="isLoading">
+            <app-loader />
+            </div>
         <div *ngIf="!isLoading" class="container-cards">
             <h2 class="my-products">My products</h2>
             <div *ngIf="products && products.length > 0; else noProducts" class="cards-items">
