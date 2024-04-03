@@ -8,23 +8,36 @@
 }
 
 .profile-card {
-    width:  9em;
+    background-color: #fff;
+    padding: 3em;
+    width: 28em;
     display: flex;
-    gap: 4em;
+    gap: 3em;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.3);
+    border: 5px solid #fff;
+    border-radius: 0.5em;
+
+
 }
 
-.profile-card h2, h4 {
+.profile-card h2 {
+    font-size: 2.6em;
+}
+.profile-card h2,
+h4 {
     color: #4F4C57;
-  
+    text-align: center;
+
 }
 
 .profile-card img {
     height: 9em;
+    width: 9em;
     border-radius: 50%;
     border: 5px solid #fff;
-    box-shadow: 0 0 1em 0 rgb(0,0,0,0.2);
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.3);
 }
 
 .profile .container .container-cards .cards-items {
@@ -32,8 +45,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap:2em;
-    
+    gap: 2em;
+
 }
 
 .my-products {
@@ -60,8 +73,9 @@
 .profile .container .container-cards .card .image-card {
     position: relative;
     width: 100%;
-    height: 100%; 
+    height: 100%;
 }
+
 .profile .container .container-cards .card .image-card img {
 
     width: 20em;
@@ -71,7 +85,7 @@
 }
 
 .profile .container .container-cards .card:hover {
-   transform: scale(1.02);
+    transform: scale(1.02);
     transition: all 0.3s ease;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
 }
@@ -79,7 +93,7 @@
 .profile .container .container-cards .card .content-card {
     display: flex;
     align-self: flex-end;
- 
+
 
 }
 
@@ -115,7 +129,7 @@
     .profile .container .container-cards .card:hover {
         width: calc(50% - 1em);
     }
-} 
+}
 
 @media (max-width: 576px) {
     .profile .container .container-cards .card {
@@ -126,4 +140,3 @@
         width: calc(100% - 1em);
     }
 }
-
