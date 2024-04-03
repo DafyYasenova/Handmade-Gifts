@@ -4,7 +4,11 @@ Angular project
 
 
 # Overview:
-Handmade Gifts is an Angular app built for sharing handmade products. It was developed for handmade brands that want their products to reach more people.
+Handmade Gifts is a web application built with Angular that aims to provide a platform for sharing handmade products. The app has been developed with handheld brands in mind who want their products to reach a larger number of people.
+
+On Handmade Gifts, users can create an account and upload their handmade products such as ornaments, souvenirs, accessories and other unique items. Each user has the ability to add a description of their products, photos and prices to present them to potential customers.
+
+Additionally, Handmade Gifts provides a convenient search engine that allows users to discover handmade products created by other users.
 
 # Installation and Getting Started
 To set up the project:
@@ -16,10 +20,12 @@ Navigate to the project folder.
 ##  Client side:
 
 navigate to client folder: cd client
+
 ng serve
 
 
-##  Server side: use practice server SoftUni, having initialized ready posts.
+##  Server side: 
+Use practice server SoftUni, having initialized ready posts.
 
 There are registered users with email and password:
 
@@ -28,9 +34,13 @@ peter@abv.bg : 123456
 george@abv.bg : 123456
 
 Open new terminal
+
 Navigate to server: cd server
+
 Install all dependencies using: npm install
+
 Start server: node server.js
+
 Run the project and enjoy!
 
 # Features:
