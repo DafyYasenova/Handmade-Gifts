@@ -32,13 +32,6 @@
     gap: 2em;
 }
 
-/* .gallery .container .container-cards::after,
-.gallery .container .container-cards::before {
-    display: block;
-    content: '';
-    flex: 0 0 30%;
-    order: 9999;
-} */
 
 .gallery .container .container-cards .card {
     box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.3);

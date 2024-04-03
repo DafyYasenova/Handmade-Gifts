@@ -16,7 +16,7 @@ export class AuthenticateComponent implements OnInit {
 
     this.isLoggedIn = this.userService.isLogged;
    
-    // console.log(this.isLoggedIn)
+
     if (!this.isLoggedIn) {
 
       this.router.navigate(['/'])

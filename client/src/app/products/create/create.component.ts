@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { tap } from 'rxjs';
+
 import { ApiService } from 'src/app/api.service';
 import { IMAGE_URL_PATTERN } from 'src/app/constants';
 
