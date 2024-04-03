@@ -186,3 +186,9 @@ h4 {
 	} 
   
 }
+
+@media(max-width: 1080px){
+  .details .container {
+    padding-left: 3em;
+  }
+}
