@@ -73,3 +73,11 @@
 .fa-regular.fa-circle-up {
     opacity: 0.5;
 }
+
+@media (max-width: 600px){
+.footer .container .info{
+    flex-direction: column;
+  padding-left: 3em;
+  gap:3em;
+}
+}
