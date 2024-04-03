@@ -59,12 +59,15 @@ Published posts are visible to everyone, but only logged in users can access det
 ##  Details:
 This page contains information such as name of the product, brand name, category, status, price, additional information, time for production, photo of the relevant blind.
 
-##  Edit page:
+###  Edit page:
 Every logged in user can edit their posts.
-##  Delete:
+###  Delete:
  Every logged in user can delete their posts.
-##  Create page:
+###  Create page:
  Visible only for logged in users.
+ 
+### Like functionality:
+Any registered and logged in user can like a post of which he is not the owner. After a successful like, the button becomes disabled and shows that there is already a like. The like is kept on the server, which means that when the same product is re-entered by the corresponding user, the like will be reflected.
 
 ## Search page:
 Accessible page only for logged in user. In it you can search for a specific product by name.
