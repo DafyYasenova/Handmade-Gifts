@@ -66,8 +66,8 @@ Every logged in user can edit their posts.
 ###  Create page:
  Visible only for logged in users.
  
-### Like functionality:
-Any registered and logged in user can like a post of which he is not the owner. After a successful like, the button becomes disabled and shows that there is already a like. The like is kept on the server, which means that when the same product is re-entered by the corresponding user, the like will be reflected.
+### Like/unlike functionality
+Any registered and logged in user can like a post of which he is not the owner. When the Like button is clicked, it shows that the product has been liked. If you decide, you can unlike it, and the button returns to its original state. The like is saved on the server, which means that when the same product is re-entered by the corresponding user, the like will be reflected.
 
 ## Search page:
 Accessible page only for logged in user. In it you can search for a specific product by name.
