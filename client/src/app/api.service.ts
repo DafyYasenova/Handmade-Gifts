@@ -11,12 +11,12 @@ import { Observable, map } from 'rxjs';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
- 
-  userId= localStorage.getItem('userId');
+
+  userId = localStorage.getItem('userId');
 
   getProducts(): Observable<Product[]> {
     const { apiUrl } = environment;
-  
+
     return this.http.get<{ [key: string]: Product }>(`${apiUrl}/data/products`).pipe(
       map(response => {
         return Object.values(response)
@@ -36,21 +36,21 @@ export class ApiService {
   createProduct(product: Product) {
     const { apiUrl } = environment;
     const payload = product;
-  
+
     return this.http.post<Product>(`${apiUrl}/data/products`, payload)
   }
 
 
-  editProduct(product: Product, id:string){
+  editProduct(product: Product, id: string) {
     const { apiUrl } = environment;
     const payload = product;
 
-    console.log('payload',payload)
+    console.log('payload', payload)
     return this.http.put<Product>(`${apiUrl}/data/products/${id}`, payload);
   }
 
 
-  deleteProduct(product: Product, id:string){
+  deleteProduct(product: Product, id: string) {
     const { apiUrl } = environment;
     const payload = product;
 
@@ -58,14 +58,14 @@ export class ApiService {
   }
 
 
-  getLatestProduct(){
-    // const { apiUrl } = environment;
-    // return this.http.get(`${apiUrl}/products?sortBy=_createdOn%20desc&offset=0&pageSize=3`).pipe(
-    //   map(response =>{
-    //     return Object.values(response)
-    //   })
-    // );
-  }
+  // getLatestProduct(){
+  // const { apiUrl } = environment;
+  // return this.http.get(`${apiUrl}/products?sortBy=_createdOn%20desc&offset=0&pageSize=3`).pipe(
+  //   map(response =>{
+  //     return Object.values(response)
+  //   })
+  // );
+  // }
   getMyProducts(userId: string): Observable<Product[]> {
     const { apiUrl } = environment;
     return this.http.get<{ [key: string]: Product }>(`${apiUrl}/data/products?where=_ownerId%3D%22${userId}%22`).pipe(
@@ -74,11 +74,15 @@ export class ApiService {
       })
     )
   }
-  
-  searchProduct(search: string){
-  
+
+  searchProduct(search: string) {
+
     const { apiUrl } = environment;
-   
+
     return this.http.get<Product>(`${apiUrl}/data/products?where=name%20LIKE%20%22${search}%22`);
   }
+
+  
+
 }
+
