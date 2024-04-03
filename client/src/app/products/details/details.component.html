@@ -10,11 +10,12 @@
                 <div class="action">
                  
                     <div *ngIf="userId !== productOwnerId && userId">
-                        <button class="like-btn btn" [disabled]="liked" (click)="addLike()">
+                        <button class="like-btn btn" (click)="toggleLike()">
                             <i [class]="liked ? 'fa-solid fa-heart' : 'fa-solid fa-thumbs-up'"></i>
-                            <span>{{ liked ? 'Liked' : 'Like' }}</span>
+                            <span>{{ liked ? 'Unlike' : 'Like' }}</span>
                         </button>
                     </div>
+                   
                     <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'edit']"><button
                             class="edit-btn btn"><i class="fa-solid fa-pencil"></i><span>Edit</span></button>
                     </div>
@@ -23,6 +24,7 @@
                                 class="fa-solid fa-trash"></i><span>Delete</span></button>
                     </div>
 
+                   
                     <div><button class="back-btn btn" [routerLink]="['/products']"><i
                                 class="fa-solid fa-circle-chevron-left"></i><span>Back</span></button></div>
 
