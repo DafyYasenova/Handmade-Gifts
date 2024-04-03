@@ -1,6 +1,4 @@
-# Handmade-Gifts
-Angular project 
-
+# Handmade-Gifts - Angular project 
 
 
 # Overview:
@@ -19,9 +17,9 @@ Navigate to the project folder.
 
 ##  Client side:
 
-navigate to client folder: cd client
+Navigate to client folder: cd client
 
-ng serve
+Run app: ng serve
 
 
 ##  Server side: 
@@ -51,13 +49,15 @@ Done by registering and logging in to the system
 Visible to everyone logged into the app.
 
 ##  About page:
-Shows some background and information about the products. The page is visible to everyone logged into the app.
+Shows some background and information about the products. The page is visible to everyone logged into the app. Here are our partiers, and each is a link to the corresponding partier.
 
-##  Catalog:
-Published posts are visible to everyone, but only logged in users can access detailed information about each post. Not logged in users are redirected to the home page.
+##  Gallery:
+Published posts are visible to everyone, but only logged in users can access detailed information about each post. Non-logged in users can view the products in the gallery, but cannot access the detail page.
 
 ##  Details:
-This page contains information such as name of the product, brand name, category, status, price, additional information, time for production, photo of the relevant blind.
+This page contains information such as product name, brand, category, status, price, additional information, production time, photo of the relevant product.
+Here are the edit and delete functionalities if the respective product was created by the logged in user. There is also a like button for users who do not own the connected product.
+There is a return to gallery button on each detail page.
 
 ###  Edit page:
 Every logged in user can edit their posts.
@@ -66,7 +66,7 @@ Every logged in user can edit their posts.
 ###  Create page:
  Visible only for logged in users.
  
-### Like/unlike functionality
+### Like/unlike:
 Any registered and logged in user can like a post of which he is not the owner. When the Like button is clicked, it shows that the product has been liked. If you decide, you can unlike it, and the button returns to its original state. The like is saved on the server, which means that when the same product is re-entered by the corresponding user, the like will be reflected.
 
 ## Search page:
@@ -77,8 +77,11 @@ Every registered and logged in user has access to his profile page, which contai
 
 ##  Technologies:
 Angular v16
+
 HTML5
+
 CSS3
+
 TypeScrypt
 
 
