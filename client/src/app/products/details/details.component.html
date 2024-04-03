@@ -8,18 +8,22 @@
             </div>
             <div class="details-content">
                 <div class="action">
-                    <div *ngIf="userId !== productOwnerId && userId"><button class="like-btn btn" (click)="toggleLike()"> <i [class]="liked ? 'fa-solid fa-heart' : 'fa-solid fa-thumbs-up'"></i>
-                        <span>{{ liked ? 'Unlike' : 'Like' }}</span></button>
+                 
+                    <div *ngIf="userId !== productOwnerId && userId">
+                        <button class="like-btn btn" [disabled]="liked" (click)="addLike()">
+                            <i [class]="liked ? 'fa-solid fa-heart' : 'fa-solid fa-thumbs-up'"></i>
+                            <span>{{ liked ? 'Liked' : 'Like' }}</span>
+                        </button>
+                    </div>
+                    <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'edit']"><button
+                            class="edit-btn btn"><i class="fa-solid fa-pencil"></i><span>Edit</span></button>
+                    </div>
+                    <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId]"><button
+                            class="delete-btn btn" (click)="showDeleteModal()"><i
+                                class="fa-solid fa-trash"></i><span>Delete</span></button>
                     </div>
 
-                    <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId, 'edit']"><button class="edit-btn btn"><i class="fa-solid fa-pencil"></i><span>Edit</span></button>
-                    </div>
-                    <div *ngIf="userId === productOwnerId" [routerLink]="['/products', productId]"><button class="delete-btn btn" (click)="showDeleteModal()"><i class="fa-solid fa-trash"></i><span>Delete</span></button>
-                    </div>
-
-                    <div *ngIf="userId !== productOwnerId && userId"><button class="comment-btn btn"><i
-                                class="fa-regular fa-comment-dots"></i><span>Comment</span></button></div>
-                    <div ><button class="back-btn btn" [routerLink]="['/products']"><i
+                    <div><button class="back-btn btn" [routerLink]="['/products']"><i
                                 class="fa-solid fa-circle-chevron-left"></i><span>Back</span></button></div>
 
                 </div>
@@ -38,19 +42,19 @@
             </div>
 
             <div *ngIf="showDeleteConfirmationModal">
-            <div  *ngIf="userId === productOwnerId && userId" class="overlay" >
-                <div class="backdrop" (click)="cancel()"></div>
-                <div class="modal">
-                    <h2>Are you sure you want to delete</h2>
+                <div *ngIf="userId === productOwnerId && userId" class="overlay">
+                    <div class="backdrop" (click)="cancel()"></div>
+                    <div class="modal">
+                        <h2>Are you sure you want to delete</h2>
                         <h2>{{product.name}}?</h2>
-                    
-                    <div class="btn">
-                        <button type="submit" (click)="deleteProduct()" >Delete</button>
-                        <button type="button" (click)="cancel()">Cancel</button>
+
+                        <div class="btn">
+                            <button type="submit" (click)="deleteProduct()">Delete</button>
+                            <button type="button" (click)="cancel()">Cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </section>
