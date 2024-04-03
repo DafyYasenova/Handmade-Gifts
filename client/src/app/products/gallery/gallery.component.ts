@@ -20,6 +20,7 @@ export class GalleryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0 });
     this.api.getProducts().subscribe((products) => {
       console.log('products:', products);
 
