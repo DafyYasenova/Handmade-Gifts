@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment.development';
 import { Product } from './types/product';
 import { Observable, map } from 'rxjs';
 
+import { Like } from './types/likes';
+
 
 @Injectable({
   providedIn: 'root'
@@ -58,14 +60,6 @@ export class ApiService {
   }
 
 
-  // getLatestProduct(){
-  // const { apiUrl } = environment;
-  // return this.http.get(`${apiUrl}/products?sortBy=_createdOn%20desc&offset=0&pageSize=3`).pipe(
-  //   map(response =>{
-  //     return Object.values(response)
-  //   })
-  // );
-  // }
   getMyProducts(userId: string): Observable<Product[]> {
     const { apiUrl } = environment;
     return this.http.get<{ [key: string]: Product }>(`${apiUrl}/data/products?where=_ownerId%3D%22${userId}%22`).pipe(
@@ -82,7 +76,25 @@ export class ApiService {
     return this.http.get<Product>(`${apiUrl}/data/products?where=name%20LIKE%20%22${search}%22`);
   }
 
-  
+  addLike(userId: string, productId: string) :Observable<Like>{
+    const { apiUrl } = environment;
+    const like : Like = { userId, productId };
+    console.log(like)
+    return this.http.post<Like>(`${apiUrl}/data/likes`, like);
+  }
 
+  
+ 
+  getAllLikes(): Observable<Like[]> {
+    const { apiUrl } = environment;
+ 
+    return this.http.get<Like[]>(`${apiUrl}/data/likes`).pipe(
+      map(response => {
+        return Object.values(response)
+      })
+    )
+  }
+ 
+ 
 }
 
