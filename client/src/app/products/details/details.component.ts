@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { Like } from 'src/app/types/likes';
 import { Product } from 'src/app/types/product';
 
 @Component({
@@ -10,11 +11,11 @@ import { Product } from 'src/app/types/product';
 })
 export class DetailsComponent implements OnInit {
 
-
+  liked: boolean = false;
   product = {} as Product;
-
+  isLiked: { [productId: string]: { liked: boolean, likeId?: string } } = {};
   productId: string = '';
-  userId = localStorage.getItem('userId');
+  userId: string | null = null;
   productOwnerId: string = '';
   showDeleteConfirmationModal: boolean = false;
 
@@ -29,8 +30,44 @@ export class DetailsComponent implements OnInit {
       this.productId = product._id as unknown as string;
       this.productOwnerId = product._ownerId as unknown as string;
 
-    })
+    });
+
+    this.userId = localStorage.getItem('userId');
+    this.checkLikedStatus();
   }
+
+  checkLikedStatus(): void {
+
+    this.apiService.getAllLikes().subscribe((likes: Like[]) => {
+      this.liked = likes.some(
+        (like) =>
+          like._ownerId === this.userId && like.productId === this.productId
+      )
+
+    });
+  }
+
+  
+  addLike(): void {
+    const canLike = this.userId !== this.productOwnerId;
+
+    if (this.userId !== null && canLike) {
+      this.apiService.addLike(this.userId, this.productId).subscribe({
+        next: () => {
+          console.log('Product liked successfully');
+          this.liked = true;
+        },
+        error: (error) => {
+          console.error('Error adding like:', error);
+        }
+      });
+
+    } else if (!canLike) {
+      console.log("You can't like your own product");
+
+    }
+  }
+
 
   showDeleteModal(): void {
     this.showDeleteConfirmationModal = true;
