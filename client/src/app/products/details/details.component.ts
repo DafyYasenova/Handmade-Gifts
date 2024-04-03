@@ -9,6 +9,7 @@ import { Product } from 'src/app/types/product';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
+
 export class DetailsComponent implements OnInit {
 
   liked: boolean = false;
@@ -18,6 +19,7 @@ export class DetailsComponent implements OnInit {
   userId: string | null = null;
   productOwnerId: string = '';
   showDeleteConfirmationModal: boolean = false;
+  likeId: string | undefined = '';
 
   constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -40,23 +42,40 @@ export class DetailsComponent implements OnInit {
 
     this.apiService.getAllLikes().subscribe((likes: Like[]) => {
       this.liked = likes.some(
-        (like) =>
-          like._ownerId === this.userId && like.productId === this.productId
-      )
+        (like) => {
+          if (
+            like._ownerId === this.userId &&
+            like.productId === this.productId
+          ) {
+            this.likeId = like._id;
+            return true;
 
-    });
+          }
+          return false;
+        });
+    })
   }
 
-  
+  toggleLike(): void {
+    if (this.liked) {
+      this.removeLike();
+    } else {
+      this.addLike();
+    }
+  }
+
   addLike(): void {
     const canLike = this.userId !== this.productOwnerId;
 
     if (this.userId !== null && canLike) {
       this.apiService.addLike(this.userId, this.productId).subscribe({
-        next: () => {
+
+        next: (like) => {
           console.log('Product liked successfully');
           this.liked = true;
+          this.likeId = like._id;
         },
+
         error: (error) => {
           console.error('Error adding like:', error);
         }
@@ -66,6 +85,24 @@ export class DetailsComponent implements OnInit {
       console.log("You can't like your own product");
 
     }
+  }
+
+
+  removeLike(): void {
+    if (this.userId) {
+
+      this.likeId && this.apiService.removeLike(this.likeId).subscribe({
+        
+        next: () => {
+          console.log('Product unliked successfully');
+          this.liked = false;
+        },
+        error: (error) => {
+          console.error('Error removing like:', error);
+        }
+      });
+    }
+
   }
 
 
