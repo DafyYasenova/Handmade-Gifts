@@ -83,7 +83,11 @@ export class ApiService {
     return this.http.post<Like>(`${apiUrl}/data/likes`, like);
   }
 
-  
+  removeLike(likeId: string) {
+    const { apiUrl } = environment;
+ 
+    return this.http.delete(`${apiUrl}/data/likes/${likeId}`);
+  }
  
   getAllLikes(): Observable<Like[]> {
     const { apiUrl } = environment;
