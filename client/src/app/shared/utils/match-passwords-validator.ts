@@ -9,7 +9,7 @@ export function matchPasswordsValidator(passwordControlName: string, rePassContr
         const isMatch = passwordControl?.value == rePasswordControl?.value;
 
 
-        console.log({ isMatch })
+        // console.log({ isMatch })
         return isMatch ? null : { matchPasswordsValidator: true };
     }
 }

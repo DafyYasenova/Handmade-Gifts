@@ -68,6 +68,13 @@ export class EditComponent implements OnInit {
       // Това ще присвои новите стойности от формата върху this.product  
       ...form.value
     };
+
+    for (const key in updatedProduct) {
+      if (updatedProduct.hasOwnProperty(key) && typeof updatedProduct[key] === 'string' ) {
+          updatedProduct[key] = updatedProduct[key].trim();
+      }
+  }
+
     if (this.isOwner) {
       this.apiService.editProduct(updatedProduct, this.currentId).subscribe({
         next: (product) => {
