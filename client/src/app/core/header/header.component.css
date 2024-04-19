@@ -57,3 +57,38 @@
     text-shadow: 1px 1px 1px #4F4C57;
 
 }
+@media screen and (max-width: 768px) {
+    .section-site-header {
+        position: static; 
+        box-shadow: none;
+    }
+
+    .section-site-header .container {
+        display: flex; 
+        padding: 1em 0; 
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 1em; 
+        text-align: center;
+    }
+
+    .main-nav div{
+        display: block;
+    }
+    .main-nav ul {
+        display: block; 
+    }
+
+    .main-nav li {
+        display: block; 
+        text-align: center; 
+        margin-bottom: 0.5em; 
+    }
+
+    .main-nav a {
+        padding: 0.2em; 
+        font-size: 1.4em; 
+    }
+}
