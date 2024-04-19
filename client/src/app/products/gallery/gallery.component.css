@@ -108,15 +108,21 @@
     .gallery .container .container-cards .card:hover {
         width: calc(50% - 1em);
     }
+    .gallery .container .container-cards .card .image-card{
+        width: auto;
+    }
 }
 
 @media (max-width: 576px) {
     .gallery .container .container-cards .card {
-        width: calc(100% - 2em);
+        width: calc(100% - 10em);
     }
 
     .gallery .container .container-cards .card:hover {
         width: calc(100% - 1em);
+    }
+    .gallery .container .container-cards .card .image-card{
+        width: auto;
     }
 }
 
