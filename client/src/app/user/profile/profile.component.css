@@ -80,7 +80,7 @@ h4 {
 
     width: 20em;
     aspect-ratio: 1/1;
-    object-fit: contain;
+    object-fit: cover;
 
 }
 
@@ -121,22 +121,3 @@ h4 {
 
 }
 
-@media (max-width: 992px) {
-    .profile .container .container-cards .card {
-        width: calc(50% - 2em);
-    }
-
-    .profile .container .container-cards .card:hover {
-        width: calc(50% - 1em);
-    }
-}
-
-@media (max-width: 576px) {
-    .profile .container .container-cards .card {
-        width: calc(100% - 2em);
-    }
-
-    .profile .container .container-cards .card:hover {
-        width: calc(100% - 1em);
-    }
-}
