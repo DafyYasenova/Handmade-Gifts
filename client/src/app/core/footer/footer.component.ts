@@ -13,4 +13,6 @@ export class FooterComponent {
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+ year: number = new Date().getFullYear();
+   
 }
