@@ -57,7 +57,12 @@
     text-shadow: 1px 1px 1px #4F4C57;
 
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 930px) {
+    .section-site-header .container{
+        max-width:fit-content;
+    }
+}
+@media screen and (max-width: 830px) {
     .section-site-header {
         position: static; 
         box-shadow: none;
