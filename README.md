@@ -1,6 +1,16 @@
 # Handmade-Gifts - Angular project 
+# Overview:
+Handmade Gifts is a web application built with Angular that aims to provide a platform for sharing handmade products. The app has been developed with handheld brands in mind who want their products to reach a larger number of people.
+
+On Handmade Gifts, users can create an account and upload their handmade products such as ornaments, souvenirs, accessories and other unique items. Each user has the ability to add a description of their products, photos and prices to present them to potential customers.
+
+Additionally, Handmade Gifts provides a convenient search engine that allows users to discover handmade products created by other users.
+
 # Demo - 
 https://www.youtube.com/watch?v=WR5QrE5p-JI
+
+# Installation and Getting Started
+To set up the project:
 
 Navigate to the project folder.
 
