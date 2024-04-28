@@ -17,7 +17,7 @@
             <div *ngIf="products && products.length > 0; else noProducts" class="cards-items">
                 <div class="card" *ngFor="let product of products">
                     <div class="image-card">
-                        <img src={{product.imageUrl}} alt={{product.name}}>
+                        <img src={{product.imageUrl}} alt="my-products">
                     </div>
                     <div class="content-card">
                         <p>{{product.name | slice : 15 }}</p>
