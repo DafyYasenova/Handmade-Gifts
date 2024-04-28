@@ -7,7 +7,11 @@ On Handmade Gifts, users can create an account and upload their handmade product
 Additionally, Handmade Gifts provides a convenient search engine that allows users to discover handmade products created by other users.
 
 # Demo - 
+## demo:
+https://handmade-gifts-a8b18.firebaseapp.com
+## video:
 https://www.youtube.com/watch?v=WR5QrE5p-JI
+
 
 # Installation and Getting Started
 To set up the project:
